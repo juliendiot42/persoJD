@@ -1,0 +1,78 @@
+---
+title: "Untitled"
+author: "Julien Diot"
+date: "`r format(Sys.time(), '%d/%m/%Y %H:%M:%S')`"
+colorlinks: true
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    number_sections: TRUE
+  pdf_document:
+    toc: true
+    toc_depth: 4
+    number_sections: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = TRUE,
+                      message = TRUE,
+                      
+                      cache=FALSE, # save chunks output 
+                      
+                      results = "hold", # display chunk output in one block
+                      
+                      tidy=FALSE, # better code organisation
+                      tidy.opts=list(width.cutoff = 80),
+                      strip.white=TRUE, #remove the white lines in the beginning or end of a source chunk
+                      
+                      fig.align="center",
+                      fig.width = 9,
+                      fig.height = 5)
+
+knitr::opts_knit$set(progress = TRUE,
+                     verbose = FALSE,
+                     width=80)
+```
+
+**Packages:**
+```{r}
+suppressPackageStartupMessages({
+  library(...)
+  library(...)
+})
+```
+
+
+
+
+
+
+
+
+
+
+# Appendix
+```{r}
+print(sessionInfo(), locale = FALSE)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
