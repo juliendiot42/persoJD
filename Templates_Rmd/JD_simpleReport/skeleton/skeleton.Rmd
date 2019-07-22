@@ -22,21 +22,25 @@ knitr::opts_chunk$set(echo = TRUE,
                       warning = TRUE,
                       message = TRUE,
                       
-                      cache=FALSE, # save chunks output 
+                      cache = FALSE, # save chunks output 
                       
                       results = "hold", # display chunk output in one block
                       
-                      tidy=FALSE, # better code organisation
-                      tidy.opts=list(width.cutoff = 80),
-                      strip.white=TRUE, #remove the white lines in the beginning or end of a source chunk
+                      tidy = FALSE, # better code organisation
+                      tidy.opts = list(width.cutoff = 80),
+                      strip.white = TRUE, #remove the white lines in the beginning or end of a source chunk
                       
-                      fig.align="center",
+                      fig.align = "center",
                       fig.width = 9,
                       fig.height = 5)
 
 knitr::opts_knit$set(progress = TRUE,
                      verbose = FALSE,
-                     width=80)
+                     width = 80)
+
+#  R options
+options(stringsAsFactors = FALSE)
+
 ```
 
 **Packages:**
