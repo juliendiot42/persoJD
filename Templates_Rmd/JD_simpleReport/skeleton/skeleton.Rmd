@@ -38,17 +38,18 @@ knitr::opts_knit$set(progress = TRUE,
                      verbose = FALSE,
                      width = 80)
 
-#  R options
-options(stringsAsFactors = FALSE)
-
 ```
 
-**Packages:**
+**Packages / R-options:**
 ```{r}
 suppressPackageStartupMessages({
   library(...)
   library(...)
 })
+
+#  R options
+options(stringsAsFactors = FALSE)
+
 ```
 
 
