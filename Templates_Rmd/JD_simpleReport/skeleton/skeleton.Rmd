@@ -40,6 +40,10 @@ knitr::opts_knit$set(progress = TRUE,
 
 ```
 
+```{css echo=FALSE}
+/* add some CSS styling here */
+```
+
 **Packages / R-options:**
 ```{r}
 suppressPackageStartupMessages({
