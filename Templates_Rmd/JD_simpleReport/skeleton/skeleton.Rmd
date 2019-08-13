@@ -40,7 +40,7 @@ knitr::opts_knit$set(progress = TRUE,
 
 ```
 
-```{css echo=FALSE}
+```{css echo=FALSE, eval = TRUE}
 /* add some CSS styling here */
 ```
 
