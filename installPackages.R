@@ -1,0 +1,79 @@
+installPackages <- function(pkg) {
+
+  # color consol messages:
+  red <- function(x) paste0('\033[31m', x,'\033[39m')
+  green <- function(x) paste0('\033[32m', x,'\033[39m')
+  yellow <- function(x) paste0('\033[33m', x,'\033[39m')
+  blue <- function(x) paste0('\033[34m', x,'\033[39m')
+
+
+  if (!pkg %in% rownames(installed.packages())) {
+
+    error <- 0
+    warn <- 0
+    msg <- tryCatch(expr = {
+      utils::install.packages(pkg, quiet = TRUE)
+      paste0('Package "', pkg, '" downloaded.\n')
+    },
+    error = function(e) {
+      error <<- 1
+      paste0('Error with "', pkg, '".\n\t', e$message)
+    },
+    warning = function(w) {
+      warn <<- 1
+      paste0('Warning with "', pkg, '":\n\t', w$message)
+    }
+    )
+
+    if (error) {
+      cat(red(msg))
+      return(("ERROR !"))
+    } else if (warn) {
+      cat(yellow(msg))
+      return("Warning")
+    } else{
+      cat(green(msg))
+      return("OK")
+    }
+
+
+  } else{
+    msg <- paste0('Package "', pkg, '" already installed.\n')
+    cat(blue(msg))
+    return("already installed")
+  }
+}
+
+
+pkgList <- c(
+  "crayon",
+  "Rcpp",
+  "devtools",
+  "roxygen2",
+  "testthat",
+  "xlsx",
+  "tidyverse", # ggplot2, dplyr...
+  "data.table",
+  "plotly",
+  "DT",
+  "rmarkdown",
+  "shiny",
+  "plumber",
+  "htmltools",
+  "stringr",
+  "digest",
+  "RColorBrewer",
+  "RCurl",
+  "R6",
+  "httr",
+  "lme4",
+  "MASS",
+  "markdown",
+  "addinslist",
+  "colourpicker",
+  "assignparams",
+  "magick"
+)
+
+sapply(pkgList, installPackages)
+update.packages()
