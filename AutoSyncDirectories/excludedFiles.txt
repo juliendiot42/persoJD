@@ -1,0 +1,3 @@
+*_excl
+.Rproj.user
+.git

@@ -17,11 +17,11 @@ installPackages <- function(pkg) {
     },
     error = function(e) {
       error <<- 1
-      paste0('Error with "', pkg, '".\n\t', e$message)
+      paste0('Error with "', pkg, '".\n\t', e$message, "\n")
     },
     warning = function(w) {
       warn <<- 1
-      paste0('Warning with "', pkg, '":\n\t', w$message)
+      paste0('Warning with "', pkg, '":\n\t', w$message, "\n")
     }
     )
 

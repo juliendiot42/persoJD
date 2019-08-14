@@ -10,3 +10,7 @@ Download automatically some useful `R` packages.
 ## `.Rprofile`
 
 My `.Rprofile` file.
+
+## AutoSyncDirectories
+
+Small code to mirror directories in Windows using `Rsync`.
