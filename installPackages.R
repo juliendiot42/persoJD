@@ -72,7 +72,10 @@ pkgList <- c(
   "addinslist",
   "colourpicker",
   "assignparams",
-  "magick"
+  "magick",
+  "caret",
+  "doParallel",
+  "qrcode"
 )
 
 sapply(pkgList, installPackages)

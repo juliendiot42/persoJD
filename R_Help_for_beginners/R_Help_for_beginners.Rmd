@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "R for beginners"
 author: "Julien Diot"
 date: "`r format(Sys.time(), '%d/%m/%Y %H:%M:%S')`"
 colorlinks: true
@@ -47,14 +47,17 @@ knitr::opts_knit$set(progress = TRUE,
 **Packages / R-options:**
 ```{r pkgs_options}
 suppressPackageStartupMessages({
-  library(...)
-  library(...)
+  # library(...)
+  # library(...)
 })
 
 #  R options
 options(stringsAsFactors = FALSE)
 
 ```
+
+This document presents some useful tasks that can be proceed with the R language.
+
 
 
 
@@ -69,19 +72,3 @@ options(stringsAsFactors = FALSE)
 ```{r sessionInfo}
 print(sessionInfo(), locale = FALSE)
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
