@@ -9,6 +9,7 @@ output:
     toc_depth: 4
     toc_float: true
     number_sections: TRUE
+    df_print: paged
   pdf_document:
     toc: true
     toc_depth: 4
