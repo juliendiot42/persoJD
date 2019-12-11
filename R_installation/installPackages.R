@@ -1,49 +1,82 @@
-# My personal file to install usefull pakages
-# Julien Diot
+installPackages <- function(pkg) {
+
+  # color consol messages:
+  red <- function(x) paste0('\033[31m', x,'\033[39m')
+  green <- function(x) paste0('\033[32m', x,'\033[39m')
+  yellow <- function(x) paste0('\033[33m', x,'\033[39m')
+  blue <- function(x) paste0('\033[34m', x,'\033[39m')
 
 
-# devtools
-install.packages("devtools")
-install.packages("tidyverse")
+  if (!pkg %in% rownames(installed.packages())) {
+
+    error <- 0
+    warn <- 0
+    msg <- tryCatch(expr = {
+      utils::install.packages(pkg, quiet = TRUE)
+      paste0('Package "', pkg, '" downloaded.\n')
+    },
+    error = function(e) {
+      error <<- 1
+      paste0('Error with "', pkg, '".\n\t', e$message, "\n")
+    },
+    warning = function(w) {
+      warn <<- 1
+      paste0('Warning with "', pkg, '":\n\t', w$message, "\n")
+    }
+    )
+
+    if (error) {
+      cat(red(msg))
+      return(("ERROR !"))
+    } else if (warn) {
+      cat(yellow(msg))
+      return("Warning")
+    } else{
+      cat(green(msg))
+      return("OK")
+    }
 
 
-# Rmd ----
-install.packages("rmarkdown")
-install.packages("caTools")
-install.packages("bitops")
-install.packages("tinytex")
+  } else{
+    msg <- paste0('Package "', pkg, '" already installed.\n')
+    cat(blue(msg))
+    return("already installed")
+  }
+}
 
 
+pkgList <- c(
+  "crayon",
+  "Rcpp",
+  "devtools",
+  "roxygen2",
+  "testthat",
+  "xlsx",
+  "tidyverse", # ggplot2, dplyr...
+  "data.table",
+  "plotly",
+  "DT",
+  "rmarkdown",
+  "shiny",
+  "plumber",
+  "htmltools",
+  "stringr",
+  "digest",
+  "RColorBrewer",
+  "RCurl",
+  "R6",
+  "httr",
+  "lme4",
+  "MASS",
+  "markdown",
+  "addinslist",
+  "colourpicker",
+  "assignparams",
+  "magick",
+  "caret",
+  "doParallel",
+  "qrcode"
+)
 
-# Shiny ----
-install.packages("shiny")
-install.packages("shinydashboard")
-install.packages("shinyjs")
-install.packages("DT")
-
-
-# graphic library ----
-install.packages("ggplot2")
-install.packages("plotly")
-
-
-
-# Stat ----
-install.packages("MASS")
-
-
-
-# R studio addins ----
-install.packages("addinslist")
-install.packages("colourpicker")
-devtools::install_github("jennybc/jadd") # assign default values
-install.packages("ggedit") # Reproducible layer, scale and theme editing for ggplot2
-
-# Data base ----
-install.packages("RSQLite")
-
-
-
-
-
-
+sapply(pkgList, installPackages)
+update.packages()
