@@ -75,7 +75,8 @@ pkgList <- c(
   "magick",
   "caret",
   "doParallel",
-  "qrcode"
+  "qrcode",
+  "BiocManager"
 )
 
 sapply(pkgList, installPackages)
