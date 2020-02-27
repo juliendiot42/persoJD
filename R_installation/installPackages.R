@@ -11,9 +11,10 @@ installPackages <- function(pkg) {
 
     error <- 0
     warn <- 0
+    cat(paste0('Installing "', pkg, '"...\n'))
     msg <- tryCatch(expr = {
       utils::install.packages(pkg, quiet = TRUE)
-      paste0('Package "', pkg, '" downloaded.\n')
+      paste0('Package "', pkg, '" installed.\n')
     },
     error = function(e) {
       error <<- 1
@@ -51,6 +52,7 @@ pkgList <- c(
   "devtools",
   "roxygen2",
   "testthat",
+  "rJava",
   "xlsx",
   "tidyverse", # ggplot2, dplyr...
   "data.table",
@@ -76,7 +78,10 @@ pkgList <- c(
   "caret",
   "doParallel",
   "qrcode",
-  "BiocManager"
+  "BiocManager",
+  "markdownInput",
+  "xaringan",
+  "citr"
 )
 
 sapply(pkgList, installPackages)
