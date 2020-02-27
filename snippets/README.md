@@ -12,6 +12,14 @@ The `r.snippets` file must be copied in the `~/.R/snippets` folder:
 
 A simple copy will not update the template when working on this GitHub repository. A solution is to create a symbolic link. For example with windows `cmd`:
 
-```
+Win:
+
+```??
 mklink /j ~\.R\snippets ~\GitRepos\persoJD\snippets
+```
+
+Linux:
+
+```sh
+sudo ln -s ~/GitRepos/persoJD/snippets ~/.R/snippets
 ```
