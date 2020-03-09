@@ -1,0 +1,131 @@
+---
+title: "Untitled"
+subtitle: "Untitled"
+author: "Julien Diot"
+institute: "東京大学"
+date: "`r format(Sys.time(), '%d/%m/%Y %H:%M:%S')`"
+output:
+  xaringan::moon_reader:
+    lib_dir: src/libs
+    # chakra: src/libs/remark-latest.min.js # first run 'xaringan::summon_remark(to = "src/libs/")'
+    css: "src/myStyle.css"
+    seal: false # Add automatic title slide
+    nature:
+      beforeInit: "src/myMacros.js"
+      slideNumberFormat: '%current%/%total%'
+      font-size: 30
+      ratio: '16:9'
+      highlightLines: true
+      highlightStyle: tomorrow-night-eighties # tomorrow-night
+      countIncrementalSlides: false
+      timer: 
+        startOnChange: true
+        resetable: true
+        enabled: true
+---
+class: title-slide
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE,
+        servr.daemon = TRUE)
+# xaringan::summon_remark(to = "src/libs/") # for use offline
+
+# compile css
+sass::sass(input = sass::sass_file("src/myStyle.scss"),
+           output = "src/myStyle.css")
+
+```
+
+<!-- add word cloud or logo image -->
+
+
+# The main title
+
+## The Sub-Title 
+
+### Julien Diot - 東京大学
+
+.logoT[![logo](src/img/UTlogo+Name.jpg)]
+
+.logoB[![logo](src/img/UTlogo+Name.jpg)]
+
+![logo](src/img/UTlogo.png)
+
+---
+class: 
+.footnote[Hello world]
+
+
+# Introduction
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+## subtest
+
+---
+class: 
+# slide title
+.left-column[
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+]
+
+.right-column[
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+]
+
+---
+class: 
+# slide title
+.pull-left20[
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+]
+
+.pull-left80[
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+]
+
+---
+class:
+.footnote[]
+
+# Image
+
+![:width 90%](src/img/UTlogo+Name.jpg)]
+
+
+.pull-left66[
+
+
+---
+class: title-slide-final
+
+# ありがとう
+
+# Thank you
+
+# Merci
+
+
+---
+class: 
+
+# References
+
+---
+class:
+
+To generate a pdf file run:
+
+```{r, eval=FALSE}
+pagedown::chrome_print("path/to/RmdFile.Rmd")
+```

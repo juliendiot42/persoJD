@@ -1,0 +1,229 @@
+/* ---- Variables ----*/
+/* colors */
+$col1: #187fc3;
+$col2: #f9be00;
+$col3: #ecd977;
+$col4: #4c4b4c;
+$col5: #aaa59f;
+
+$dark1: #181818;
+$dark2: #2a2a2a;
+$grey1: #686868;
+$grey2: #afafaf;
+$light1: #eeeeee;
+$light2: #d8d8d8;
+
+$red: #b30027;
+$green: #399b00;
+$blue: #004eb3;
+
+/* font */
+$fSize: 20px; /* global font-size */
+$fFam: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif; /* global font-family */
+
+/* padding */
+$lPad: 4; /* 4 */
+$rPad: 4; /* 4 */
+$tpad: 1; /* 1 */
+$bpad: 1; /* 1 */
+$lPadem: $lPad + em;
+$rPadem: $rPad + em;
+$tPadem: $tpad + em;
+$bPadem: $bpad + em;
+
+/* ---- CSS ---- */
+/* global */
+.remark-slide-content {
+  font-family: $fFam;
+  font-size: $fSize;
+  padding: $tPadem $rPadem $bPadem $lPadem;
+}
+
+h1 {
+  color: $col1;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-color: $col2;
+}
+
+h2 {
+  color: $col2;
+  border-bottom-width: 3px;
+  text-decoration: underline;
+  text-decoration-color: $col1;
+}
+
+a,
+a > code {
+  color: $col3;
+  text-decoration: none;
+}
+
+/* important code */
+.remark-code-line-highlighted {
+  background-color: $col3 !important;
+}
+
+/* footnote */
+.footnote {
+  color: $grey1;
+  font-size: 70%;
+  text-align: center;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: $dark2;
+
+  position: absolute;
+  left: 10%;
+  width: 80%; /* must be 100 - 2 x left */
+  bottom: 1em;
+  padding-right: 0; /* overwrite default.css */
+  padding-top: 1px;
+}
+
+/* tables */
+ul {
+  margin: 0em 0em 1.5em 0em;
+}
+ul li::marker {
+  color: $col2; /* Change the color */
+  font-weight: bolder; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed)*/
+}
+li {
+  margin: 0.5em 0em 0em 0em;
+}
+
+/* title-slide */
+.title-slide {
+  h1 {
+    color: $col1;
+
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-color: $col2;
+
+    font-size: 45px;
+    font-weight: bold;
+    text-align: left;
+
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    margin-right: $rPad * $fSize; /* ~ 4em */
+    margin-left: $lPad * $fSize; /* ~ 4em */
+  }
+
+  h2 {
+    color: $grey1;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: normal;
+    text-align: left;
+    text-shadow: none;
+    padding-top: 0px;
+    margin-top: 0px;
+
+    position: absolute;
+    top: 75%;
+    left: 0;
+    right: 0;
+    margin-right: $rPad * $fSize; /* ~ 4em */
+    margin-left: $lPad * $fSize; /* ~ 4em */
+  }
+
+  h3 {
+    font-size: 28px;
+    font-weight: normal;
+    color: $grey2;
+    text-align: right;
+    line-height: 1;
+
+    position: absolute;
+    top: 85%;
+    left: 0;
+    right: 0;
+    margin-right: $rPad * $fSize; /* ~ 4em */
+    margin-left: $lPad * $fSize; /* ~ 4em */
+  }
+
+  p > img {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    max-width: 645px;
+    max-height: 370px;
+  }
+
+  .logoB {
+    /* logo bottom */
+    // background-color: red;
+    position: absolute;
+    top: 85%;
+    left: 0;
+    width: 250px;
+    height: 75px;
+    margin-left: $lPad * $fSize; /* ~ 4em */
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  .logoT {
+    /* logo top */
+    // background-color: red;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 300px;
+    height: 150px;
+    margin-left: $lPad * $fSize; /* ~ 4em */
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .remark-slide-number {
+    visibility: hidden;
+  }
+}
+
+.title-slide-final {
+  text-align: center;
+
+  h1 {
+    border-bottom-style: none;
+  }
+}
+
+/* columns */
+
+@for $i from 1 through 10 {
+  .pull-left#{$i*10} {
+    width: $i * 10%;
+    float: left;
+  }
+}
+@for $i from 1 through 10 {
+  .pull-right#{$i*10} {
+    width: $i * 10%;
+    float: right;
+  }
+}

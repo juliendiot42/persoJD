@@ -65,10 +65,10 @@ options(stringsAsFactors = FALSE)
 
 
 
-
 # Appendix
 ```{r sessionInfo}
 print(sessionInfo(), locale = FALSE)
+
 ```
 
 
