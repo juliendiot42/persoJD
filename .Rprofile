@@ -46,7 +46,7 @@ options(Ncpus = max(as.numeric(system("nproc", intern = TRUE)) - 2, 1))
 
     cat(paste0(
       green(paste("\nWelcome", system("whoami", intern = T), "!!! - ")),
-      yellowItalic(date()), "\n",
+      yellowItalic(format(Sys.time(), "%a %B %d %Y, %H:%M:%S")), "\n",
       "  - CRAN repository:\n",
       "\t",options("repos"),"\n",
       "  - Packages library path:\n",paste0("\t",.libPaths(), collapse = "\n"),"\n\n",
