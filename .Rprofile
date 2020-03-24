@@ -27,11 +27,13 @@ options(repos = c(CRAN = "https://cran.ism.ac.jp/"))
 # quit without asking to save workspace image
 utils::assignInNamespace(
   "q",
-  function (save = "no", ...) {
+  function(save = "no", ...) {
     quit(save = save, ...)
   }
   , "base")
 
+# increase number of CPU for package installation:
+options(Ncpus = max(as.numeric(system("nproc", intern = TRUE)) - 2, 1))
 
 .First <- function(){
   if(interactive()){
@@ -43,12 +45,13 @@ utils::assignInNamespace(
     blue <- function(x) paste0('\033[34m', x,'\033[39m')
 
     cat(paste0(
-      green("\nWelcome Julien !!! - "),
+      green(paste("\nWelcome", system("whoami", intern = T), "!!! - ")),
       yellowItalic(date()), "\n",
       "  - CRAN repository:\n",
       "\t",options("repos"),"\n",
       "  - Packages library path:\n",paste0("\t",.libPaths(), collapse = "\n"),"\n\n",
       "  - 'stringsAsFactors' is \"", options("stringsAsFactors"),"\".\n",
+      "  - 'Ncpus' is \"", options("Ncpus"),"\" for packages instalations.\n",
       "  - 'q()' will not save the workspace image.\n",
       "  - Working directory: ", getwd(), "\n",
       "\n"))
