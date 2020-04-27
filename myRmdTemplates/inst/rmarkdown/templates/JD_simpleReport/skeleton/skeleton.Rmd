@@ -24,12 +24,16 @@ knitr::opts_chunk$set(echo = TRUE,
                       include = TRUE,
                       warning = TRUE,
                       message = TRUE,
-                      
-                      cache = FALSE, # save chunks output 
-                      
+                      cache = TRUE, # save chunks output
                       results = "hold", # display chunk output in one block
                       
-                      tidy = FALSE, # better code organisation
+                      # df_print paged options
+                      rows.print = 10,
+                      max.print = Inf,
+                      
+                      
+                      # format
+                      tidy = FALSE, # format code with 'tidy_source()'
                       tidy.opts = list(width.cutoff = 80),
                       strip.white = TRUE, #remove the white lines in the beginning or end of a source chunk
                       
@@ -90,7 +94,7 @@ suppressPackageStartupMessages({
 
 #  R options
 options(stringsAsFactors = FALSE)
-
+options(max.print = 20)
 ```
 
 
@@ -103,6 +107,7 @@ options(stringsAsFactors = FALSE)
 
 # Appendix
 ```{r sessionInfo}
+options(max.print = 10000)
 cat("Document generated in:\n")
 print(Sys.time() - knitStartTime)
 if (Sys.info()["sysname"] == "Linux") {
