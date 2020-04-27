@@ -1,3 +1,5 @@
+options("Ncpus" = 6)
+
 installPackages <- function(pkg) {
 
   # color consol messages:
@@ -81,8 +83,17 @@ pkgList <- c(
   "BiocManager",
   "markdownInput",
   "xaringan",
-  "citr"
+  "citr",
+  "sass",
+  "microbenchmark",
+  "profvis",
+  "beepr"
 )
 
 sapply(pkgList, installPackages)
+
+devtools::install_github("timflutre/rutilstimflutre")
+devtools::install_github("juliendiot42/rjdiotperso")
+devtools::install_github("juliendiot42/persoJD/myRmdTemplates")
+
 update.packages()
