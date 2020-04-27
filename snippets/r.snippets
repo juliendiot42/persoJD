@@ -129,17 +129,78 @@ snippet start
 	#### CODE ####
 
 snippet plot
-	plot_ly(data = ${1:dta},
-		x = ~${2:x},
-		y = ~${3:y},
-		hoverinfo = 'text',
-		text = apply(${1:dta}, 1, function(l) {
-				paste(names(l), ":", l, collapse = "\n")
-			})
+	plot_ly(type = "scatter",
+					mode = "lines+markers",
+					data = ${1:dta},
+					x = ~${2:x},
+					y = ~${3:y},
+					# color = ~ , 
+					hoverinfo = 'text',
+					text = apply(${1:dta}, 1, function(l) {
+						paste(names(l), ":", l, collapse = "\n")
+					})
 	)
+	
+snippet hist
+	plot_ly(x = ${1:dta},
+					type = "histogram",
+					histnorm = "",# "" | "percent" | "probability"
+					name = "${1:dta}",
+					# nbinsx = 100, # no more than nbinsx
+					hovertemplate = "x: (%{x})\ny: %{y}",
+					marker = list(color = "green",
+												line = list(color = "black",
+																		width = 1))
+					) %>%
+		layout(
+			title = "${2:x}",
+			xaxis = list(title = "${2:x}"),
+			yaxis = list(title = "Count", # "percent" | "probability"
+										zeroline = TRUE)
+	  )
 
 snippet micro
 	microbenchmark::microbenchmark(
 			old = {},
 			new = {}
 	)
+
+snippet myColor
+	myColors <- list(
+		red = "#CC0015",
+		green = "#27CC1D",
+		blue = "#003ECC",
+		yellow = "#CCB600",
+		orange = "#CC6300",
+		purple = "#CA01CC",
+
+		red_ = c("#CC0015", "#B30012", "#8C000E", "#6B000B", "#420007"),		
+		green_ = c("#27CC1D", "#21B319", "#1A8C14", "#146B0F", "#0C4209"),
+		blue_ = c("#003ECC", "#0036B3", "#002A8C", "#00206B", "#001442"),
+		yellow_ = c("#CCB600", "#B3A100", "#8C7E00", "#6B6000", "#423C00"),
+		orange_ = c("#CC6300", "#B35600", "#8C4400", "#6B3400", "#422000"),
+		purple_ = c("#CA01CC", "#B000B3", "#8A008C", "#69006B", "#410042")
+	)
+	
+snippet testAPI
+	# Test ${1:METHODE} /${2:path} ----
+	test_that("${1:METHODE} /${2:path}", {
+		  
+		# creat path and request
+		path <- paste0(host,"/${2:path}")
+		query <- list(
+			${3:key} = ${4:value}
+			)
+		
+		
+		# send request
+		resp <- ${1:METHODE}(path,
+								query = query)
+		
+		# test status
+		expect_equal(resp\$status_code, 200)
+		
+		# test response content
+		respContent <- content(resp)
+		expect_equal(respContent\$KEY, VALUE)
+	})
