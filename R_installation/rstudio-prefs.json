@@ -1,0 +1,69 @@
+{
+    "panes": {
+        "quadrants": [
+            "Source",
+            "TabSet1",
+            "Console",
+            "TabSet2"
+        ],
+        "tabSet1": [
+            "History",
+            "Connections",
+            "Build",
+            "VCS",
+            "Tutorial",
+            "Presentation"
+        ],
+        "tabSet2": [
+            "Environment",
+            "Files",
+            "Plots",
+            "Packages",
+            "Help",
+            "Viewer"
+        ],
+        "console_left_on_top": false,
+        "console_right_on_top": true
+    },
+    "show_invisibles": true,
+    "show_indent_guides": true,
+    "continue_comments_on_newline": true,
+    "tab_multiline_completion": true,
+    "show_help_tooltip_on_idle": true,
+    "check_arguments_to_r_function_calls": true,
+    "check_unexpected_assignment_in_function_call": true,
+    "warn_if_no_such_variable_in_scope": true,
+    "auto_append_newline": true,
+    "strip_trailing_whitespace": true,
+    "scroll_past_end_of_document": true,
+    "highlight_r_function_calls": true,
+    "font_size_points": 14,
+    "editor_theme": "Idle Fingers",
+    "default_encoding": "UTF-8",
+    "default_project_location": "~/",
+    "source_with_echo": true,
+    "show_doc_outline_rmd": true,
+    "show_rmd_render_command": true,
+    "wrap_tab_navigation": false,
+    "console_double_click_select": true,
+    "save_workspace": "never",
+    "remove_history_duplicates": true,
+    "reuse_sessions_for_project_links": true,
+    "help_font_size_points": 12,
+    "auto_save_on_blur": true,
+    "warn_variable_defined_but_not_used": true,
+    "style_diagnostics": true,
+    "save_files_before_build": true,
+    "cran_mirror": {
+        "name": "Japan (Tokyo) [https]",
+        "host": "The Institute of Statistical Mathematics, Tokyo",
+        "url": "https://cran.ism.ac.jp/",
+        "country": "jp",
+        "ok": 1,
+        "secondary": "0-Cloud|https://cloud.r-project.org/"
+    },
+    "insert_numbered_latex_sections": true,
+    "default_sweave_engine": "knitr",
+    "posix_terminal_shell": "bash",
+    "new_proj_git_init": true
+}
