@@ -49,10 +49,10 @@ if (interactive()) { # ! important
     cat(paste0(
       green(paste("\nWelcome", system("whoami", intern = T), "!!! - ")),
       yellowItalic(format(Sys.time(), "%a %B %d %Y, %H:%M:%S")), "\n",
+      "  - ", version$version.string, "\n",
       "  - CRAN repository:\n",
       "\t",options("repos"),"\n",
       "  - Packages library path:\n",paste0("\t",.libPaths(), collapse = "\n"),"\n\n",
-      "  - 'stringsAsFactors' is \"", options("stringsAsFactors"),"\".\n",
       "  - 'Ncpus' is \"", options("Ncpus"),"\" for packages instalations.\n",
       "  - 'q()' will not save the workspace image.\n",
       "  - Working directory: ", getwd(), "\n",
