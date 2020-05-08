@@ -52,6 +52,10 @@ pkgList <- c(
   "crayon",
   "Rcpp",
   "devtools",
+  "spelling",
+  "pkgdown",
+  "badger",
+  "badgecreatr",
   "roxygen2",
   "testthat",
   "rJava",
@@ -87,7 +91,8 @@ pkgList <- c(
   "sass",
   "microbenchmark",
   "profvis",
-  "beepr"
+  "beepr",
+  "renv"
 )
 
 sapply(pkgList, installPackages)
