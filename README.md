@@ -3,14 +3,33 @@
 This repository contains the files I use for work or personal usage.
 I provide these files without any warranty, it's a backup that I can access anywhere, but it could be useful for other people.
 
-## `installPackages.R`
+## [R_installation](R_installation)
 
-Download automatically some useful `R` packages.
+contain `installPackages.R` script for downloading some useful `R` packages.
 
-## `.Rprofile`
+## [myRmdTemplates](myRmdTemplates)
+
+Personal R package containing my R-Markdown templates.
+
+## [`.Rprofile`](.Rprofile)
 
 My `.Rprofile` file.
 
+## [R-StudioConfig](R-StudioConfig)
+
+Contain the R-Studio configuration files: 
+
+- Settings
+- Snippets
+- Personal dictionary
+
+To retrieve my configuration:
+
+```sh
+rm -r ~/.config/rstudio
+ln -s /persoJD/R-StudioConfig/ ~/.config/rstudio
+```
+
 ## AutoSyncDirectories
 
-Small code to mirror directories in Windows using `Rsync`.
+Small code to mirror directories in Windows using `Rsync`. (Does not work very well)

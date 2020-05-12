@@ -1,20 +1,20 @@
 ---
 title: "Untitled"
 author: "Julien Diot"
-date: "`r format(Sys.time(), '%d/%m/%Y %H:%M:%S')`"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
 colorlinks: true
 output:
   html_document:
+    self_contained: true
     toc: true
     toc_depth: 4
     toc_float: true
     number_sections: TRUE
     code_folding: hide
     df_print: paged
-  pdf_document:
-    toc: true
-    toc_depth: 4
-    number_sections: TRUE
+    css: "src/myStyle.css"
+    includes:
+      after_body: src/footer.html
 ---
 
 ```{r setup, include=FALSE}
@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       include = TRUE,
                       warning = TRUE,
                       message = TRUE,
-                      cache = TRUE, # save chunks output
+                      cache = FALSE, # save chunks output
                       results = "hold", # display chunk output in one block
                       
                       # df_print paged options
@@ -44,69 +44,55 @@ knitr::opts_chunk$set(echo = TRUE,
 knitr::opts_knit$set(progress = TRUE,
                      verbose = FALSE,
                      width = 80)
+
+# compile css
+sass::sass(input = sass::sass_file("src/myStyle.scss"),
+           output = "src/myStyle.css")
 ```
 
 ```{css echo=FALSE, eval = TRUE}
 /* add some CSS styling here */
-
-.note {
-  border-style:solid;
-  border-width:1px;
-  border-color: #a3a3a3;
-  border-radius:4px;
-  
-  background-color: #f0f0f0;
-  padding: 10px;
-  margin: 10px;
-}
-.note:before {
-  content: "Note:";
-  margin: 15px;
-  font-style: italic;
-  text-decoration: underline;
-}
-
-.NOTE {
-  border-style:solid;
-  border-width:1px;
-  border-color: #ff5151;
-  border-radius:4px;
-  
-  background-color: #f0f0f0;
-  padding: 10px;
-  margin: 10px;
-  color: #ff5151;
-}
-.NOTE:before {
-  content: "Important Note:";
-  margin: 15px;
-  font-style: italic;
-  text-decoration: underline;
-}
 ```
 
 **Packages / R-options:**
-```{r pkgs_options}
+```{r pkgs_options, results='hide'}
 suppressPackageStartupMessages({
-  library(...)
-  library(...)
+  # library(...)
+  # library(...)
 })
 
 #  R options
-options(stringsAsFactors = FALSE)
 options(max.print = 20)
 ```
 
+# Title
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+## Sub title
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
 
+<div class="note">
+Hello there !
+</div>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
 
+# to hide or show a specific chunk code:
 
+```{r class.source = 'fold-show'}
+print("toto")
+```
 
-
+```{r class.source = 'fold-hide'}
+print("toto")
+```
 
 # Appendix
-```{r sessionInfo}
+```{r sessionInfo, echo=FALSE}
 options(max.print = 10000)
 cat("Document generated in:\n")
 print(Sys.time() - knitStartTime)
@@ -119,19 +105,4 @@ if (Sys.info()["sysname"] == "Linux") {
 cat("\n\n\nSession information:\n")
 print(sessionInfo(), locale = FALSE)
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

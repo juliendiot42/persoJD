@@ -22,7 +22,7 @@ options(continue = "... ")
 # options(stringsAsFactors = FALSE)
 
 # CRAN repository:
-options(repos = c(CRAN = "https://cran.ism.ac.jp/"))
+# options(repos = c(CRAN = "https://cran.ism.ac.jp/"))
 
 
 
@@ -75,4 +75,11 @@ if (interactive()) { # ! important
   }
 }
 
+if ("languageserversetup" %in% rownames(utils::installed.packages())) {
+  # LanguageServer Setup Start (do not change this chunk)
+  # to remove this, run languageserversetup::remove_from_rprofile
+  options(langserver_library = '/home/julien/languageserver-library')
+  languageserversetup::languageserver_startup()
+  unloadNamespace('languageserversetup')
+  # LanguageServer Setup End
 }

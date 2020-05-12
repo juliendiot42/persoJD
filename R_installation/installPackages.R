@@ -92,7 +92,8 @@ pkgList <- c(
   "microbenchmark",
   "profvis",
   "beepr",
-  "renv"
+  "renv",
+  "RVerbalExpressions"
 )
 
 sapply(pkgList, installPackages)
