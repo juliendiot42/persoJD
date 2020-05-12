@@ -11,13 +11,9 @@ contain `installPackages.R` script for downloading some useful `R` packages.
 
 Personal R package containing my R-Markdown templates.
 
-## [`.Rprofile`](.Rprofile)
-
-My `.Rprofile` file.
-
 ## [R-StudioConfig](R-StudioConfig)
 
-Contain the R-Studio configuration files: 
+Contain the R-Studio configuration files:
 
 - Settings
 - Snippets
@@ -29,6 +25,10 @@ To retrieve my configuration:
 rm -r ~/.config/rstudio
 ln -s /persoJD/R-StudioConfig/ ~/.config/rstudio
 ```
+
+## [`.Rprofile`](.Rprofile)
+
+My `.Rprofile` file.
 
 ## AutoSyncDirectories
 
