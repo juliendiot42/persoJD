@@ -70,5 +70,6 @@
     "code_completion_delay": 100,
     "background_diagnostics_delay_ms": 1000,
     "show_hidden_files": true,
-    "load_workspace": false
+    "load_workspace": false,
+    "knit_working_dir": "project"
 }

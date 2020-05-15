@@ -19,7 +19,7 @@ options(continue = "... ")
 # options(tab.width = 4)
 # options(width = 130)
 # options(graphics.record = TRUE)
-# options(stringsAsFactors = FALSE)
+
 
 # CRAN repository:
 # options(repos = c(CRAN = "https://cran.ism.ac.jp/"))
@@ -47,7 +47,7 @@ if (interactive()) { # ! important
     blue <- function(x) paste0('\033[34m', x,'\033[39m')
 
     cat(paste0(
-      green(paste("\nWelcome", system("whoami", intern = T), "!!! - ")),
+      green(paste("\nWelcome", Sys.info()["user"], "!!! - ")),
       yellowItalic(format(Sys.time(), "%a %B %d %Y, %H:%M:%S")), "\n",
       "  - ", version$version.string, "\n",
       "  - CRAN repository:\n",
@@ -83,3 +83,4 @@ if ("languageserversetup" %in% rownames(utils::installed.packages())) {
   unloadNamespace('languageserversetup')
   # LanguageServer Setup End
 }
+
