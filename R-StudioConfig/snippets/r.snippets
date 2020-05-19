@@ -218,3 +218,68 @@ snippet verbalExpr
 		rx_end_of_line()
 	# print the expression
 	x
+
+snippet R6
+	#' R6 class representing a ${1:object}
+	#'
+	#' @description
+	#' Description of ${1:object}
+	#'
+	#'
+	#' @export
+	#' @import R6
+	${1:object} <- R6::R6Class(
+		"${1:object}",
+		lock_objects = FALSE,
+		public = list(
+			#' @field ${2:field1} [] ${2:field1} description
+			${2:field1} = NULL,
+			#' @field ${3:field2} [] ${3:field2} description
+			${3:field2} = NULL,
+	
+			#' @description Create a new ${1:object} object.
+			#' @param ${2:field1} [] ${2:field1} description
+			#' @param ${3:field2} [] ${3:field2} description
+			#' @return A new `${1:object}` object.
+			#' @examples
+			#' # create specie:
+			#' my${1:object} <- ${1:object}\$new(${2:field1} = NULL,
+			#'															${3:field2} = NULL)
+			initialize = function(${2:field1} = NULL,
+														${3:field2} = NULL){
+				self\$ ${2:field1} <- ${2:field1}
+				self\$ ${3:field2} <- ${3:field2}
+				private\$ ${6:privateField} <- NULL
+			},
+			#' @description Description of ${4:method1}
+			#' @param x [] Description of x
+			#' @examples
+			#' my${1:object} <- ${1:object}$new(${2:field1} = NULL,
+			#'															${3:field2} = NULL)
+			#' my${1:object}\$ ${4:method1}(x)
+			${4:method1} = function(x){
+				x
+			},
+			#' @description
+			#' Display informations about the object
+			print = function() {
+				cat(paste0("This is a ${1:object}"))
+			}
+		),
+		active = list(
+			#' @field ${5:activeField1} [] description of ${5:activeField1}
+			${5:activeField1} = function(){
+				x
+			}
+		),
+		private = list(
+			# @field ${6:privateField} [] ${6:privateField} description
+			${6:privateField} = NULL,
+			# @description description of ${7:privateMethod}
+			# @param x [] description of x
+			# @return NULL
+			${7:privateMethod} = function(x) {
+				x
+			}
+		)
+	)
