@@ -72,4 +72,5 @@
     "show_hidden_files": true,
     "load_workspace": false,
     "knit_working_dir": "project"
+    "always_save_history": false
 }
