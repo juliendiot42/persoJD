@@ -1,0 +1,27 @@
+Binding: createStatProject
+Title: JD - Statistical project
+OpenFiles: analysis.R
+
+Parameter: data
+Widget: CheckboxInput
+Label: Create "data" folder
+Default: On
+Position: left
+
+Parameter: output
+Widget: CheckboxInput
+Label: Create "output" folder
+Default: On
+Position: left
+
+Parameter: src
+Widget: CheckboxInput
+Label: Create "src" folder
+Default: On
+Position: right
+
+Parameter: tmp
+Widget: CheckboxInput
+Label: Create "tmp" folder
+Default: off
+Position: right

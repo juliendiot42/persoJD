@@ -1,10 +1,10 @@
-Package: myRmdTemplates
+Package: JD.Templates
 Type: Package
-Title: My Rmd Templates
+Title: Julien Diot's Personal R and R-Studio Templates
 Version: 0.1.0
 Author: Julien Diot
 Maintainer: Julien Diot <juliendio42@gmail.com>
-Description: My package for my Rmd templates.
+Description: This package contains my R-Projects and Rmd templates
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
