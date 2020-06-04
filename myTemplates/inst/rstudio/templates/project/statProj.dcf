@@ -18,6 +18,12 @@ Parameter: src
 Widget: CheckboxInput
 Label: Create "src" folder
 Default: On
+Position: left
+
+Parameter: test
+Widget: CheckboxInput
+Label: Create "test" folder
+Default: off
 Position: right
 
 Parameter: tmp

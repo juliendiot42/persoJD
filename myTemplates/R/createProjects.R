@@ -30,6 +30,12 @@ createStatProject <- function(path, ...) {
     dir.create(directory, recursive = TRUE, showWarnings = FALSE)
   }
 
+  # create "test" dir
+  if (params[["data"]]) {
+    directory <- paste0(path, "/test")
+    dir.create(directory, recursive = TRUE, showWarnings = FALSE)
+  }
+
   # create "tmp" dir
   if (params[["data"]]) {
     directory <- paste0(path, "/tmp")
