@@ -41,9 +41,11 @@ knitr::opts_chunk$set(echo = TRUE,
                       fig.width = 9,
                       fig.height = 5)
 
-knitr::opts_knit$set(progress = TRUE,
+knitr::opts_knit$set(# root.dir = '/tmp', # change wd of all chunks
+                     progress = TRUE,
                      verbose = FALSE,
-                     width = 80)
+                     width = 80
+                     )
 
 # compile css
 sass::sass(input = sass::sass_file("src/myStyle.scss"),
@@ -54,7 +56,7 @@ sass::sass(input = sass::sass_file("src/myStyle.scss"),
 /* add some CSS styling here */
 ```
 
-**Packages / R-options:**
+### Packages / R-options: {-}
 ```{r pkgs_options, results='hide'}
 suppressPackageStartupMessages({
   # library(...)
@@ -67,7 +69,65 @@ options(max.print = 20)
 
 # Title
 
+# Title
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+H~2~O is a liquid.  2^10^ is 1024.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+> (quote paragraph) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+| This can be useful to give adress:
+|    1234 My Street 
+|    98740 AwsomeCity Country
+| It is not formatted like normal markdown lines.
+
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+1. one
+1. two
+
+a. one
+a. two
+
+i. one
+i. two
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+- [ ] an unchecked task list item
+- [x] checked item
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Term 1
+  ~ Definition 1
+
+Term 2
+  ~ Definition 2a
+  ~ Definition 2b
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+@)  My first example will be numbered (1).
+(@)  My second example will be numbered (2).
+
+Explanation of examples.
+
+(@)  My third example will be numbered (3).
+
+We can also use names:
+
+(@good)  This is a good example.
+
+As (@good) illustrates, ...
 
 ## Sub title
 
@@ -91,7 +151,7 @@ print("toto")
 print("toto")
 ```
 
-# Appendix
+# Appendix {-}
 ```{r sessionInfo, echo=FALSE}
 options(max.print = 10000)
 cat("Document generated in:\n")
