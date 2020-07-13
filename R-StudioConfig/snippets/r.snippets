@@ -283,3 +283,64 @@ snippet R6
 			}
 		)
 	)
+
+snippet sendMail
+	#' Send an email using the linux command "mail" and postfix
+	#'
+	#'
+	#' @param to destination
+	#' @param subject
+	#' @param body
+	#' @param from sender info
+	#' @param file optional attached files
+	#'
+	#' @return NULL
+	#' @export
+	#'
+	#' @examples
+	sendMail <- function(to,
+	                     subject,
+	                     body,
+	                     from = paste0(Sys.info()["user"], "-R@", Sys.info()["nodename"]),
+	                     file = NULL) {
+	
+	    # check if system can send mails
+	    x <- system("hash mail", intern = TRUE)
+	    if ( ! is.null(attributes(x))) {
+	        stop("Command 'mail' not found. Please install 'postfix' and 'mailutils'.")
+	    }
+	
+	    # attached files
+	    if (! is.null(file)) {
+	        stopifnot("file not found" = all(file.exists(file)))
+	        if (sum(file.size(file)) > 10^7 ) {
+	            warning("Attached files bigger than 10 Mo ! May not work...")
+	        }
+	        fileCmd <- paste0(" --content-filename=\"", basename(file),"\" --attach=\"", file, "\"", collapse = " ")
+	    } else {
+	        fileCmd <- ""
+	    }
+	
+	    command <- paste0("echo \"", body, "\" | mail ",
+	                      "-s \"", subject, "\" ",
+	                      "-aFrom:", from,
+	                      " ", paste(to, collapse = " "),
+	                      fileCmd)
+	    cat(command)
+	    system(command)
+	}
+	sendMail(to, subject, body, file = file)
+
+snippet funViz
+	plotDta <- data.frame(x = seq(${1:from}, ${2:to}, length.out = 200)) %>%
+	dplyr::mutate(y1 = dnorm(x, 0, 1), y2 = dnorm(x, 1, 0.5))
+	plot_ly(
+		type = "scatter",
+		mode = "lines",
+		data = plotDta,
+		x = ~ x,
+		y = ~ y1,
+		name = "y1"
+	) %>%
+	add_lines(y = ~ y2, name = "y2", ) %>%
+	layout(hovermode = 'compare')
