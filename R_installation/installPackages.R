@@ -101,5 +101,5 @@ sapply(pkgList, installPackages)
 devtools::install_github("timflutre/rutilstimflutre")
 devtools::install_github("juliendiot42/rjdiotperso")
 devtools::install_github("juliendiot42/persoJD/myRmdTemplates")
-
+devtools::install_github("jalvesaq/colorout")
 update.packages()

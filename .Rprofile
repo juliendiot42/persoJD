@@ -9,17 +9,10 @@
 # options(prompt = "> ")
 # options(continue = "+ ")
 options(continue = "... ")
+options(max.print = 500)
 
-# to prefer Compiled HTML
-# help options(chmhelp = TRUE)
-# to prefer HTML help
-# options(htmlhelp = TRUE)
-
-# General options
-# options(tab.width = 4)
-# options(width = 130)
-# options(graphics.record = TRUE)
-
+# No scientific notation.
+options(scipen = 10)
 
 # CRAN repository:
 # options(repos = c(CRAN = "https://cran.ism.ac.jp/"))
@@ -41,6 +34,13 @@ if (interactive()) { # ! important
 
   .First <- function(){
 
+    if (Sys.getenv("TERM") %in% c("xterm-256color", "screen-256color")) {
+      library("colorout") # from git hub: devtools::install_github("jalvesaq/colorout")
+      setOutputColors(normal = 255,number = 33,zero = 33,negnum = 33,infinite = c(3, 0, 33),const = 243,
+        index = 243,false = 203,true = 40,date = 184,string = 2,zero.limit = NA,stderror = 255,
+        warn = c(1, NA, 202), error = c(160, 231), verbose = FALSE)
+    }
+
     red <- function(x) paste0('\033[31m', x,'\033[39m')
     green <- function(x) paste0('\033[32m', x,'\033[39m')
     yellowItalic <- function(x) paste0('\033[33m\033[3m', x,'\033[23m\033[39m')
@@ -57,6 +57,8 @@ if (interactive()) { # ! important
       "  - 'q()' will not save the workspace image.\n",
       "  - Working directory: ", getwd(), "\n",
       "\n"))
+
+
 
     remove(red, green , yellowItalic , blue)
 
