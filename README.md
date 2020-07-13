@@ -23,7 +23,12 @@ To retrieve my configuration:
 
 ```sh
 rm -r ~/.config/rstudio
-ln -s ./persoJD/R-StudioConfig/ ~/.config/rstudio
+ln -s path/to/persoJD/R-StudioConfig/ ~/.config/rstudio
+```
+
+```sh
+rm -r ~/rprofile
+ln -s path/to/persoJD/.Rprofile ~/.Rprofile
 ```
 
 ## [`.Rprofile`](.Rprofile)
