@@ -40,7 +40,7 @@
     "font_size_points": 16,
     "editor_theme": "Idle Fingers",
     "default_encoding": "UTF-8",
-    "default_project_location": "~/",
+    "default_project_location": "~/Desktop",
     "show_doc_outline_rmd": true,
     "show_rmd_render_command": true,
     "console_double_click_select": true,
@@ -72,6 +72,10 @@
     "load_workspace": false,
     "always_save_history": false,
     "plumber_viewer_type": "browser",
-    "source_with_echo": true,
-    "doc_outline_show": "sections_and_chunks"
+    "doc_outline_show": "sections_and_chunks",
+    "auto_expand_error_tracebacks": true,
+    "shiny_viewer_type": "browser",
+    "initial_working_directory": "~/Documents/HOME/R",
+    "new_proj_git_init": true,
+    "shiny_background_jobs": true
 }

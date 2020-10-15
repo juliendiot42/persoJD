@@ -1,4 +1,5 @@
 {
     "pasteLastYank": "",
-    "yankBeforeCursor": "Ctrl+U"
+    "yankBeforeCursor": "Ctrl+U",
+    "newSourceDoc": "Ctrl+Shift+N"
 }

@@ -232,11 +232,13 @@ snippet R6
 		"${1:object}",
 		lock_objects = FALSE,
 		public = list(
+		  # Public Fields ####
 			#' @field ${2:field1} [] ${2:field1} description
 			${2:field1} = NULL,
 			#' @field ${3:field2} [] ${3:field2} description
 			${3:field2} = NULL,
 	
+	    # Public Methods ####
 			#' @description Create a new ${1:object} object.
 			#' @param ${2:field1} [] ${2:field1} description
 			#' @param ${3:field2} [] ${3:field2} description
@@ -267,14 +269,18 @@ snippet R6
 			}
 		),
 		active = list(
+		  # Active Fields ####
 			#' @field ${5:activeField1} [] description of ${5:activeField1}
 			${5:activeField1} = function(){
 				x
 			}
 		),
 		private = list(
-			# @field ${6:privateField} [] ${6:privateField} description
+		  # Private Fields ####
+			#' @field ${6:privateField} [] ${6:privateField} description
 			${6:privateField} = NULL,
+			
+			# Private Methods ####
 			# @description description of ${7:privateMethod}
 			# @param x [] description of x
 			# @return NULL
@@ -344,3 +350,68 @@ snippet funViz
 	) %>%
 	add_lines(y = ~ y2, name = "y2", ) %>%
 	layout(hovermode = 'compare')
+
+# Shiny related
+snippet box 
+	shinydashboard::box(
+					width = ${1:width},
+					title = ${2:title},
+					div(
+						# id = "",
+						# class = "divClass",
+						## Add ui here ##
+					)
+	)
+snippet alpha
+	α
+snippet beta
+	β
+snippet gamma
+	γ
+snippet delta
+	δ
+snippet epsilon
+	ε
+snippet zeta
+	ζ
+snippet eta
+	η
+snippet theta
+	θ
+snippet iota
+	ι
+snippet kappa
+	κ
+snippet lambda
+	λ
+snippet mu
+	μ
+snippet nu
+	ν
+snippet xi
+	ξ
+snippet omicron
+	ο
+snippet pi
+	π
+snippet rho
+	ρ
+snippet varsigma
+	ς
+snippet sigma
+	σ
+snippet tau
+	τ
+snippet upsilon
+	υ
+snippet phi
+	φ
+snippet chi
+	χ
+snippet psi
+	ψ
+snippet omega
+	ω
+
+
+
