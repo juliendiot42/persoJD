@@ -1,0 +1,3 @@
+Binding: createShinyProject
+Title: JD - Shiny app
+OpenFiles: ui.R global.R

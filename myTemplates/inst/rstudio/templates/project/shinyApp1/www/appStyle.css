@@ -1,0 +1,113 @@
+/*
+Author: Julien Diot juliendiot@ut-biomet.org
+2020 The University of Tokyo
+
+Description:
+SCSS style of the application
+*/
+/* ---- Variables ----*/
+/* colors */
+/* font */
+/* global font-size (default; 14px) */
+/* global font-family (default: "Helvetica Neue",Helvetica,Arial,sans-serif") */
+/* ---- Style ----*/
+body {
+  font-family: "Nunito", "Proxima Nova Soft", "Helvetica Neue", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #2a2a2a;
+  background-color: #fff;
+}
+
+/* ---------- background-color ---------- */
+.content-wrapper,
+.right-side {
+  background-color: #afafaf;
+}
+
+/* ---- headers ----*/
+/* ---------- font-familly ---------- */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+}
+
+.main-header .logo {
+  font-family: inherit;
+}
+
+/*  ---------- Box ---------- */
+/* border*/
+.box {
+  border-radius: 20px;
+  border-top: 3px solid #187fc3;
+}
+
+.box-header {
+  border-radius: 18px 18px 0px 0;
+  padding: 10px 20px 10px 20px;
+}
+
+.box-body {
+  padding: 15px 20px 15px 20px;
+}
+
+.small-box {
+  border-radius: 20px;
+}
+
+/* color */
+.box.box-solid.box-primary {
+  border: 0px solid #187fc3;
+  /* remove border */
+}
+
+.box.box-solid.box-primary > .box-header {
+  color: #2a2a2a;
+  background: #187fc3;
+  background-color: #187fc3;
+}
+
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color: #187fc3;
+}
+
+/* shadow */
+.box,
+.nav-tabs-custom {
+  box-shadow: 5px 5px 10px #181818;
+}
+
+/* ---- Sliders ---- */
+/* colors */
+.irs-bar {
+  border-top-color: #f9be00;
+  border-bottom-color: #f9be00;
+  background-color: #f9be00;
+}
+
+.irs-bar-edge {
+  border-color: #f9be00;
+  border-right-color: #f9be00;
+  background: #f9be00;
+}
+
+.irs-from, .irs-to, .irs-single {
+  color: #000;
+  background: #f9be00;
+}
+
+/* ---- special class ----*/
+/* debug box */
+.debug {
+  background-color: #2a2a2a;
+  color: #eeeeee;
+}
+
+.box.debug {
+  border-top: 3px solid #b30027;
+}
+
+.box.debug > div {
+  color: #eeeeee;
+}
+

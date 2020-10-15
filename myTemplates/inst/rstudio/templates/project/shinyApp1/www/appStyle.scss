@@ -1,0 +1,149 @@
+/*
+Author: Julien Diot juliendiot@ut-biomet.org
+2020 The University of Tokyo
+
+Description:
+SCSS style of the application
+*/
+
+// help: https://www.w3schools.com/cssref/css_selectors.asp
+
+/* ---- Variables ----*/
+/* colors */
+$col1: #187fc3;
+$col2: #f9be00;
+$col3: #ecd977;
+$col4: #4c4b4c;
+$col5: #aaa59f;
+
+$dark1: #181818;
+$dark2: #2a2a2a;
+$grey1: #686868;
+$grey2: #afafaf;
+$light1: #eeeeee;
+$light2: #d8d8d8;
+
+$red: #b30027;
+$green: #399b00;
+$blue: #004eb3;
+$white: #fff;
+$black: #000;
+
+/* font */
+$fSize: 16px; /* global font-size (default; 14px) */
+$fFam: /*"Lato",*/ "Nunito", "Proxima Nova Soft", "Helvetica Neue",
+  "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
+  Geneva, Verdana, sans-serif; /* global font-family (default: "Helvetica Neue",Helvetica,Arial,sans-serif") */
+
+/* ---- Style ----*/
+$textColor: $dark2;
+body {
+  font-family: $fFam;
+  font-size: $fSize;
+  line-height: 1.42857143;
+  color: $textColor;
+  background-color: $white;
+}
+
+/* ---------- background-color ---------- */
+.content-wrapper,
+.right-side {
+  background-color: $grey2;
+}
+
+
+
+
+/* ---- headers ----*/
+/* ---------- font-familly ---------- */
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
+  font-family: inherit;
+}
+.main-header .logo {
+  font-family: inherit;
+}
+
+
+/*  ---------- Box ---------- */
+$boxCol: $col1;
+/* border*/
+.box {
+  border-radius: 20px;
+  border-top: 3px solid $boxCol;
+}
+.box-header {
+  border-radius: 18px 18px 0px 0;
+  padding: 10px 20px 10px 20px;
+}
+
+.box-body {
+  padding: 15px 20px 15px 20px;
+}
+
+.small-box {
+  border-radius: 20px;
+}
+
+/* color */
+.box.box-solid.box-primary {
+  border: 0px solid $boxCol; /* remove border */
+}
+.box.box-solid.box-primary > .box-header {
+  color: $textColor;
+  background: $boxCol;
+  background-color: $boxCol;
+}
+
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color: $boxCol;
+}
+
+/* shadow */
+.box,
+.nav-tabs-custom {
+  box-shadow: 5px 5px 10px $dark1;
+}
+
+/* ---- Sliders ---- */
+
+/* colors */
+$sliderCol: $col2;
+//$sliderCol: default;
+$slidTextCol: $black;
+@if $sliderCol != default {
+  .irs-bar {
+      border-top-color: $sliderCol;
+      border-bottom-color: $sliderCol;
+      background-color: $sliderCol;
+  }
+  .irs-bar-edge {
+    border-color:$sliderCol;
+    border-right-color: $sliderCol;
+    background: $sliderCol;
+  }
+
+  .irs-from, .irs-to, .irs-single {
+    color: $slidTextCol;
+    background: $sliderCol;
+  }
+}
+
+
+
+
+/* ---- special class ----*/
+
+/* debug box */
+
+.debug {
+  background-color: $dark2;
+  color: $light1; 
+}
+
+.box.debug{
+  border-top: 3px solid $red;
+}
+
+.box.debug > div{
+  color: $light1; 
+}

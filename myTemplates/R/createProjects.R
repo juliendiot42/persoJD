@@ -2,7 +2,7 @@
 # the New Project wizard using the project template defined in the template file
 # at:
 #
-#   inst/rstudio/templates/project/statProj.dcf
+#   inst/rstudio/templates/project/xxxx.dcf
 #
 createStatProject <- function(path, ...) {
 
@@ -47,3 +47,12 @@ createStatProject <- function(path, ...) {
   file.create(file)
 
 }
+
+
+createShinyProject <- function(path, ...) {
+  templateAppPath <- system.file("rstudio/templates/project/shinyApp1/",
+                                 package = "JD.Templates")
+  R.utils::copyDirectory(templateAppPath, path)
+}
+
+
