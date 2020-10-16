@@ -45,6 +45,7 @@ shinyUI(
                           href = "https://fonts.googleapis.com/css?family=Nunito")
             ),
 
+            tabItems(tabItem(tabName = "hidden", useShinyjs())),
             # load all file from "src/ui"
             do.call(tabItems,
                     lapply(

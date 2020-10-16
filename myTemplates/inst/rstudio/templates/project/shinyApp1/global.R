@@ -13,7 +13,7 @@ library(shiny)
 library(shinydashboard) # dashboards with 'Shiny'
 # library("shinydashboardPlus") # https://rinterface.com/shiny/shinydashboardPlus/
 # library(shinycssloaders) # Loading Animations
-# library(shinyjs) # javascript in shiny
+library(shinyjs) # javascript in shiny
 stopifnot("sass" %in% installed.packages()) # use of SASS for generating CSS
 
 # library(plotly) # interactive graph
