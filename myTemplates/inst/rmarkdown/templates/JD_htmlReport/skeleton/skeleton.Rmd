@@ -67,7 +67,6 @@ suppressPackageStartupMessages({
 options(max.print = 20)
 ```
 
-# Title
 
 # Title
 
@@ -150,6 +149,84 @@ print("toto")
 ```{r class.source = 'fold-hide'}
 print("toto")
 ```
+
+
+# Sections in tabs {.tabset .tabset-fade .tabset-pills}
+
+## Tab 1 
+
+Content **Tab 1**
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+
+
+## Tab 2
+
+Content **Tab 2**
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+
+## Tab 3
+
+Content **Tab 3**
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+
+
+
+
+# Dynamic sections with plots
+
+
+```{r}
+dta <- iris
+plts <- list()
+for (c in colnames(dta)[-5]) {
+  plts[[c]] <- plotly::plot_ly(
+    x = dta[, c],
+    type = "histogram",
+    name = c
+  ) 
+}
+```
+
+For *plotly*, if no other plots is rendered in the document we need to add the dependencies manually.
+
+```{r echo=FALSE, messages=FALSE, warning=FALSE}
+        # attach the Dependencies
+        # since the do not get included with renderTags(...)$html
+        deps <- lapply(
+          Filter(function(x){inherits(x,"htmlwidget")}, plts),
+          function(hw){
+            htmltools::renderTags(hw)$dependencies
+          }
+        )
+
+        htmltools::attachDependencies(
+          htmltools::tagList(),
+          unlist(deps,recursive=FALSE)
+        )
+```
+Display plots and sections.
+
+
+
+```{r, results='asis', warning = FALSE}
+
+for (i in seq(plts)) {
+  cat("## Histogram of ", names(plts[i]), "\n") # section
+
+  # knitr::knit_print(plts[[i]]) # plot
+  # cat(renderTags(plts[[i]])$html)
+  print(htmltools::tagList(plts[[i]]))
+  cat('\n\n') # new section
+}
+```
+
+
 
 # Appendix {-}
 ```{r sessionInfo, echo=FALSE}
