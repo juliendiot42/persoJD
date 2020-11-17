@@ -92,11 +92,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 1. one
 1. two
 
+<!-- -->
+
 a. one
 a. two
 
+<!-- -->
+
 i. one
 i. two
+i. three
+i. four
+i. five
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
