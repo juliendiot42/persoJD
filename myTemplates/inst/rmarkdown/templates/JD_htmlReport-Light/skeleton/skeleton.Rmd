@@ -1,0 +1,296 @@
+---
+title: "Untitled"
+author: "Julien Diot"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+colorlinks: true
+output:
+  html_document:
+    self_contained: true
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    number_sections: TRUE
+    code_folding: hide
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitStartTime <- Sys.time()
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = TRUE,
+                      message = TRUE,
+                      cache = FALSE, # save chunks output
+                      results = "hold", # display chunk output in one block
+                      
+                      # df_print paged options
+                      rows.print = 10,
+                      max.print = Inf,
+                      
+                      
+                      # format
+                      tidy = FALSE, # format code with 'tidy_source()'
+                      tidy.opts = list(width.cutoff = 80),
+                      strip.white = TRUE, #remove the white lines in the beginning or end of a source chunk
+                      
+                      fig.align = "center",
+                      fig.width = 9,
+                      fig.height = 5)
+
+knitr::opts_knit$set(# root.dir = '/tmp', # change wd of all chunks
+                     progress = TRUE,
+                     verbose = FALSE,
+                     width = 80
+                     )
+
+```
+
+```{css echo=FALSE, eval = TRUE}
+.note {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #afafaf;
+  border-radius: 4px;
+
+  background-color: #eeeeee;
+  padding: 10px;
+  margin: 10px;
+}
+.note:before {
+  content: "Note:";
+  margin: 15px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.NOTE {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #b30027;
+  border-radius: 4px;
+
+  background-color: #eeeeee;
+  padding: 10px;
+  margin: 10px;
+  color: #ff5151;
+}
+.NOTE:before {
+  content: "Important Note:";
+  margin: 15px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+/* footer ------ */
+.footer {
+  color: #afafaf;
+
+  /* a { */
+  /*   color: #399b00; */
+  /* } */
+}
+```
+
+### Packages / R-options: {.unnumbered}
+
+```{r pkgs_options, results='hide'}
+suppressPackageStartupMessages({
+  # library(...)
+  # library(...)
+})
+
+#  R options
+options(max.print = 20)
+```
+
+# Title
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+H~2~O is a liquid. 2^10^ is 1024.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. [@fakeRef42]
+
+> (quote paragraph) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+| This can be useful to give adress:
+|    1234 My Street
+|    98740 AwsomeCity Country
+| It is not formatted like normal markdown lines.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+1.  one
+2.  two
+
+<!-- -->
+
+a.  one
+
+b.  two
+
+c.  one
+
+d.  two
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+-   [ ] an unchecked task list item
+-   [x] checked item
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Term 1
+
+:   Definition 1
+
+Term 2
+
+:   Definition 2a
+
+:   Definition 2b
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+1)  My first example will be numbered (1).
+
+<!-- -->
+
+(2) My second example will be numbered (2).
+
+Explanation of examples.
+
+(3) My third example will be numbered (3).
+
+We can also use names:
+
+(4) This is a good example.
+
+As (4) illustrates, ...
+
+## Sub title
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+::: {.note}
+Hello there !
+:::
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+# to hide or show a specific chunk code:
+
+```{r class.source = 'fold-show'}
+print("toto")
+```
+
+```{r class.source = 'fold-hide'}
+print("toto")
+```
+
+# Sections in tabs {.tabset .tabset-fade .tabset-pills}
+
+## Tab 1
+
+Content **Tab 1**
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+## Tab 2
+
+Content **Tab 2**
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+## Tab 3
+
+Content **Tab 3**
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+# Dynamic sections with plots
+
+```{r}
+dta <- iris
+plts <- list()
+for (c in colnames(dta)[-5]) {
+  plts[[c]] <- plotly::plot_ly(
+    x = dta[, c],
+    type = "histogram",
+    name = c
+  ) 
+}
+```
+
+For *plotly*, if no other plots is rendered in the document we need to add the dependencies manually.
+
+```{r echo=FALSE, messages=FALSE, warning=FALSE}
+        # attach the Dependencies
+        # since the do not get included with renderTags(...)$html
+        deps <- lapply(
+          Filter(function(x){inherits(x,"htmlwidget")}, plts),
+          function(hw){
+            htmltools::renderTags(hw)$dependencies
+          }
+        )
+
+        htmltools::attachDependencies(
+          htmltools::tagList(),
+          unlist(deps,recursive=FALSE)
+        )
+```
+
+Display plots and sections.
+
+```{r, results='asis', warning = FALSE}
+
+for (i in seq(plts)) {
+  cat("## Histogram of ", names(plts[i]), "\n") # section
+
+  # knitr::knit_print(plts[[i]]) # plot
+  # cat(renderTags(plts[[i]])$html)
+  print(htmltools::tagList(plts[[i]]))
+  cat('\n\n') # new section
+}
+```
+
+# Appendix {.unnumbered}
+
+```{r sessionInfo, echo=FALSE}
+options(max.print = 10000)
+cat("Document generated in:\n")
+print(Sys.time() - knitStartTime)
+if (Sys.info()["sysname"] == "Linux") {
+  cat("\nCPU: ")
+  cat(unique(system("awk -F': ' '/model name/{print $2}' /proc/cpuinfo", intern = T)))
+  cat("\nMemory total size: ")
+  cat(as.numeric(system("awk '/MemTotal/ {print $2}' /proc/meminfo", intern = T))*10^(-6), "GB")
+  }
+cat("\n\n\nSession information:\n")
+print(sessionInfo(), locale = FALSE)
+```
+
+```{r results='asis'}
+shiny::HTML('&nbsp;
+<!-- Add icon/font library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+
+<div class="footer" style="font-family: Lato">
+    <hr />
+    <p style="text-align: center;"><a href="https://github.com/juliendiot42">Julien Diot</a></p>
+    <p style="text-align: center;"><span style="color: #808080;"><em>juliendiot@ut-biomet.org</em></span></p>
+
+<!-- Add font awesome icons -->
+    <p style="text-align: center;">
+        <a href="https://github.com/juliendiot42" class="fab fa-github"></a>
+        <a href="https://www.linkedin.com/in/julien-diot-949592107/" class="fab fa-linkedin"></a>
+        <a href="https://orcid.org/0000-0002-8738-2034" class="fab fa-orcid"></a>
+        <a href="https://keybase.io/juliendiot" class="fab fa-keybase"></a>
+    </p>
+</div>
+&nbsp;')
+```
