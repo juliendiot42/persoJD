@@ -351,6 +351,39 @@ snippet funViz
 	add_lines(y = ~ y2, name = "y2", ) %>%
 	layout(hovermode = 'compare')
 
+
+snippet tryCatch
+	tryCatch({
+		# This is the 'try' part
+		# write here the code to try
+		${1:expression}
+		
+		# No need to state the return value via `return()` as code 
+		# in the "try" part is not wrapped insided a function (unlike that
+		# for the condition handlers for warnings and error below)
+		
+	}, error = function(err) {
+		# Error part, evaluated in case of error:
+		message("Error detected. Here's the original error message:")
+		message(err)
+		# Choose a return value in case of error
+		return(1)
+		
+	}, warning = function(warn) {
+		# Warning part, evaluated in case of warning:
+		message("Warning detected. Here's the original warning message:")
+		message(warn)
+		# Choose a return value in case of warning
+		return(2)
+		
+	}, finally = {
+		# NOTE:
+		# Here goes everything that should be executed at the end,
+		# regardless of success or error.
+		message("\nSome other message at the end")
+	
+	})
+
 # Shiny related
 snippet box 
 	shinydashboard::box(
