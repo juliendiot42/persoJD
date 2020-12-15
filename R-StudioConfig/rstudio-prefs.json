@@ -77,5 +77,8 @@
     "shiny_viewer_type": "browser",
     "initial_working_directory": "~/Documents/HOME/R",
     "new_proj_git_init": true,
-    "shiny_background_jobs": true
+    "shiny_background_jobs": true,
+    "source_with_echo": true,
+    "rainbow_parentheses": true,
+    "show_diagnostics_other": true
 }
