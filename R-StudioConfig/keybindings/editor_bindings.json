@@ -1,1 +1,4 @@
-{}
+{
+    "golinedown": "Down|Ctrl+Shift+N",
+    "selectdown": "Shift+Down|Ctrl+N"
+}
