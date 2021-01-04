@@ -129,6 +129,7 @@ snippet start
 	#### CODE ####
 
 snippet plot
+	`r suppressPackageStartupMessages(library("plotly")); "#plot"`
 	plot_ly(type = "scatter",
 					mode = "lines+markers",
 					data = ${1:dta},
@@ -142,6 +143,7 @@ snippet plot
 	)
 	
 snippet hist
+	`r suppressPackageStartupMessages(library("plotly")); "#hist"`
 	plot_ly(x = ${1:dta},
 					type = "histogram",
 					histnorm = "",# "" | "percent" | "probability"
@@ -338,6 +340,7 @@ snippet sendMail
 	sendMail(to, subject, body, file = file)
 
 snippet funViz
+	`r suppressPackageStartupMessages(library("plotly")); "#funViz"`
 	plotDta <- data.frame(x = seq(${1:from}, ${2:to}, length.out = 200)) %>%
 	dplyr::mutate(y1 = dnorm(x, 0, 1), y2 = dnorm(x, 1, 0.5))
 	plot_ly(
@@ -445,6 +448,3 @@ snippet psi
 	ψ
 snippet omega
 	ω
-
-
-
