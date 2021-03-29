@@ -1,8 +1,8 @@
 snippet lib
-	library(${1:package})
+	library(${0})
 
 snippet req
-	require(${1:package})
+	require(${0})
 
 snippet src
 	source("${1:file.R}")
@@ -175,13 +175,27 @@ snippet myColor
 		yellow = "#CCB600",
 		orange = "#CC6300",
 		purple = "#CA01CC",
-
+		
 		red_ = c("#CC0015", "#B30012", "#8C000E", "#6B000B", "#420007"),
 		green_ = c("#27CC1D", "#21B319", "#1A8C14", "#146B0F", "#0C4209"),
 		blue_ = c("#003ECC", "#0036B3", "#002A8C", "#00206B", "#001442"),
 		yellow_ = c("#CCB600", "#B3A100", "#8C7E00", "#6B6000", "#423C00"),
 		orange_ = c("#CC6300", "#B35600", "#8C4400", "#6B3400", "#422000"),
-		purple_ = c("#CA01CC", "#B000B3", "#8A008C", "#69006B", "#410042")
+		purple_ = c("#CA01CC", "#B000B3", "#8A008C", "#69006B", "#410042"),
+		
+		pal1 = c("#CC0015", "#27CC1D", "#003ECC", "#CCB600", "#CC6300", "#CA01CC"),
+		batlow = c("#001959", "#184E60", "#577646", "#B28C32", "#FCA68C", "#F9CCF9"),
+		mononoke = c("#74828D", "#383B51", "#0B1120", "#AA202C", "#ABACA9", "#F2F3E3"),
+		chiiro = c("#000706","#A43847","#B0152D","#EAFCFA","#F06260","#F2C6AA"),
+		ponyo = c("#007CB0", "#00547F", "#81B9D8", "#DD7768", "#E95867", "#F7CCAC"),
+		majo = c("#18459C", "#303461", "#D9DE77", "#EC414D", "#FBAF74", "#FBF3DB"),
+		hauru = c("#0086C6", "#566586", "#813C4E", "#BCBC26", "#EDC097", "#F0BD49"),
+		totoro = c("#47678A", "#646A69", "#D1CFA8", "#D15579", "#DB8727", "#E4E476"),
+		amelie = c("#FDC24D", "#C52B24", "#EDE4DA", "#032430", "#009C4E", "#013821"),
+		# see also pkg "scico"
+		# to check palette: 
+		# library(scales)
+		# show_col(c("#CC0015", "#27CC1D", "#003ECC", "#CCB600", "#CC6300", "#CA01CC"))
 	)
 	
 snippet testAPI

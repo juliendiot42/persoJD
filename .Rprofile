@@ -33,12 +33,28 @@ if (interactive()) { # ! important
     , "base")
 
   .First <- function(){
-
-    if (Sys.getenv("TERM") %in% c("xterm-256color", "screen-256color")) {
-      # library("colorout") # from git hub: devtools::install_github("jalvesaq/colorout")
-      colorout::setOutputColors(normal = 255,number = 33,zero = 33,negnum = 33,infinite = c(3, 0, 33),const = 243,
-        index = 243,false = 203,true = 40,date = 184,string = 2,zero.limit = NA,stderror = 255,
-        warn = c(1, NA, 202), error = c(160, 231), verbose = FALSE)
+    if ("colorout" %in% rownames(utils::installed.packages())) {
+      if (Sys.getenv("TERM") %in% c("xterm-256color", "screen-256color")) {
+        # library("colorout") # from git hub: devtools::install_github("jalvesaq/colorout")
+        colorout::setOutputColors(
+          normal = 255,
+          number = 33,
+          zero = 33,
+          negnum = 33,
+          infinite = c(3, 0, 33),
+          const = 243,
+          index = 243,
+          false = 203,
+          true = 40,
+          date = 184,
+          string = 2,
+          zero.limit = NA,
+          stderror = 255,
+          warn = c(1, NA, 202),
+          error = c(160, 231),
+          verbose = FALSE
+        )
+      }
     }
 
     red <- function(x) paste0('\033[31m', x,'\033[39m')

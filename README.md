@@ -7,9 +7,9 @@ I provide these files without any warranty, it's a backup that I can access anyw
 
 contain `installPackages.R` script for downloading some useful `R` packages.
 
-## [myRmdTemplates](myRmdTemplates)
+## [myTemplates](myTemplates)
 
-Personal R package containing my R-Markdown templates.
+Personal R package containing my R-Markdown, R-project, Shiny application templates.
 
 ## [R-StudioConfig](R-StudioConfig)
 
