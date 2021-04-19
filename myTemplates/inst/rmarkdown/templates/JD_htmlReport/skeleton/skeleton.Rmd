@@ -12,7 +12,7 @@ output:
     number_sections: TRUE
     code_folding: hide
     df_print: paged
-    css: "src/myStyle.css"
+    css: "src/myStyle.scss"
     includes:
       after_body: src/footer.html
 ---
@@ -46,10 +46,6 @@ knitr::opts_knit$set(# root.dir = '/tmp', # change wd of all chunks
                      verbose = FALSE,
                      width = 80
                      )
-
-# compile css
-sass::sass(input = sass::sass_file("src/myStyle.scss"),
-           output = "src/myStyle.css")
 ```
 
 ```{css echo=FALSE, eval = TRUE}
