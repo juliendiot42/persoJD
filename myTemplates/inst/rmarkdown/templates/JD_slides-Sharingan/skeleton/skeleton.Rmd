@@ -45,9 +45,9 @@ sass::sass(input = sass::sass_file("src/myStyle.scss"),
 
 ### Julien Diot - 東京大学
 
-.logoT[![logo](src/img/UTlogo+Name.jpg)]
+.logoT[![logo](src/img/UTlogo_Name.jpg)]
 
-.logoB[![logo](src/img/UTlogo+Name.jpg)]
+.logoB[![logo](src/img/UTlogo_Name.jpg)]
 
 ![logo](src/img/UTlogo.png)
 
@@ -100,10 +100,9 @@ class:
 
 # Image
 
-![:width 90%](src/img/UTlogo+Name.jpg)]
+![:width 60%](src/img/UTlogo_Name.jpg)
 
 
-.pull-left66[
 
 
 ---
