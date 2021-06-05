@@ -7,6 +7,13 @@ sudo apt update
 sudo apt upgrade
 ```
 
+## change hostname
+
+```sh
+sudo nano /etc/hostname
+sudo nano /etc/hosts
+```
+
 ## bash parameters:
 
 To set bash case-insensitive. (not so nessesary after intallation of zsh) 
@@ -225,7 +232,9 @@ libcairo2-dev \
 xorg-dev \
 tcl-dev \
 tk-dev \
-libgit2-dev
+libgit2-dev \
+texlive-fonts-extra \
+texinfo xfonts-100dpi xfonts-75dpi
 ```
 #### download
 
@@ -412,7 +421,7 @@ https://extensions.gnome.org/extension/945/cpu-power-manager/
 
 Drop down terminal toggled by a keystroke (the key above tab by default) for advanced users.
 
-https://extensions.gnome.org/extension/442/drop-down-terminal/
+https://extensions.gnome.org/extension/1509/drop-down-terminal-x/
 
 ## GSConnect by dlandau
 
@@ -490,7 +499,11 @@ Put an indicator on the panel signaling in which workspace you are, and give you
 
 https://extensions.gnome.org/extension/21/workspace-indicator/
 
+## Dash to Dock (for pop_os!)
 
+A dock for the Gnome Shell. This extension moves the dash out of the overview transforming it in a dock for an easier launching of applications and a faster switching between windows and desktops. Side and bottom placement options are available.
+
+https://extensions.gnome.org/extension/307/dash-to-dock/
 
 
 
