@@ -629,3 +629,55 @@ ls -la /hard_drive/
 ls -la /hard_drive/home
 
 ```
+
+
+## Custom keyboard on linux
+
+Tutorial found here' https://ubuntu-mate.community/t/make-your-own-custom-keyboard-layout-for-linux/19733
+A GUI for creating the custom layout can be found here https://github.com/simos/keyboardlayouteditor
+
+This tool will create a text file looking like this see my file here' 
+
+default  partial alphanumeric_keys
+xkb_symbols "jpjd"
+{
+	name[Group1] = "jpjd";
+
+// First row
+    key <TLDE>	{ [Zenkaku_Hankaku, Kanji] }; 
+    key <AE01> { [ 1, exclam		] };
+    key <AE02> { [ 2, quotedbl, eacute	] };
+    key <AE03> { [ 3, numbersign	] };
+    key <AE04> { [ 4, dollar		] };
+!@#$%^*&*()_+{}[]|":;'\/.,<>?><>
+
+
+Copy your finished symbol file into /usr/share/X11/xkb/symbols directory
+
+Navigate to the directory /usr/share/X11/xkb/rules.
+
+Open files base.lst and evdev.lst. They are identical and you have to edit both of them identically. Find ! layout line and insert your own layout definition, e.g. jpjd     Japanese
+
+Open files evdev.xml and base.xml. They are identical and you have to edit both of them identically. Find <layoutList> line and insert your own layout definition below. For example:
+
+
+    <layout>
+      <configItem>
+        <name>jpjd</name>
+        <shortDescription>jpjd</shortDescription>
+	  <description>Custom JD</description>
+        <languageList><iso639Id>jp</iso639Id></languageList>
+      </configItem>
+      <variantList/>
+    </layout>
+
+
+for japanese mozc'
+
+Edit the mozc.xml file by entering the following command in a terminal:
+
+sudo gedit /usr/share/ibus/component/mozc.xml
+
+Change <layout>default</layout> to <layout>jpjd</layout> and save. 
+
+w this is in $HOME/.mozc/ibus_config.textproto

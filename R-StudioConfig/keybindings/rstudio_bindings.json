@@ -3,5 +3,13 @@
     "yankBeforeCursor": "Ctrl+U",
     "newSourceDoc": "Ctrl+N",
     "executeToCurrentLine": "Ctrl+Shift+Enter",
-    "sourceActiveDocumentWithEcho": "Ctrl+Alt+B"
+    "sourceActiveDocumentWithEcho": "Ctrl+Alt+B",
+    "closeSourceDoc": "",
+    "nextTab": "Ctrl+W",
+    "quitSession": "",
+    "debugStep": "",
+    "restartR": "F10",
+    "zoomIn": "",
+    "zoomOut": "",
+    "insertAssignmentOperator": "Alt+-"
 }

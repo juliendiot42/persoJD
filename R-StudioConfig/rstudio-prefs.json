@@ -25,7 +25,7 @@
         "hiddenTabSet": [],
         "console_left_on_top": false,
         "console_right_on_top": true,
-        "additional_source_columns": 0
+        "additional_source_columns": 1
     },
     "show_invisibles": true,
     "show_indent_guides": true,
@@ -39,7 +39,7 @@
     "strip_trailing_whitespace": true,
     "scroll_past_end_of_document": true,
     "highlight_r_function_calls": true,
-    "font_size_points": 14,
+    "font_size_points": 11,
     "default_encoding": "UTF-8",
     "default_project_location": "~/Desktop",
     "show_doc_outline_rmd": true,
@@ -63,7 +63,7 @@
     "insert_numbered_latex_sections": true,
     "default_sweave_engine": "knitr",
     "posix_terminal_shell": "zsh",
-    "rmd_preferred_template_path": "/home/julien/R/x86_64-pc-linux-gnu-library/4.0/JD.Templates/rmarkdown/templates/JD_htmlReport",
+    "rmd_preferred_template_path": "/home/julien/R/x86_64-pc-linux-gnu-library/4.1/JD.Templates/rmarkdown/templates/JD_htmlReport",
     "jobs_tab_visibility": "shown",
     "soft_wrap_r_files": true,
     "highlight_selected_line": true,
@@ -76,11 +76,9 @@
     "auto_expand_error_tracebacks": true,
     "shiny_viewer_type": "browser",
     "initial_working_directory": "~/Documents/HOME/R",
-    "shiny_background_jobs": true,
     "rainbow_parentheses": true,
     "show_diagnostics_other": true,
     "graphics_backend": "cairo",
-    "focus_console_after_exec": true,
     "auto_save_on_blur": true,
     "syntax_color_console": true,
     "document_author": "JD",
@@ -88,5 +86,10 @@
     "python_type": "system",
     "python_version": "3.8.6",
     "python_path": "/usr/bin/python3.8",
-    "source_with_echo": true
+    "source_with_echo": true,
+    "editor_keybindings": "vim",
+    "pdf_previewer": "none",
+    "show_function_signature_tooltips": false,
+    "new_proj_git_init": true,
+    "terminal_path": "/usr/bin/terminator"
 }

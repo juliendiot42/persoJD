@@ -87,27 +87,27 @@ snippet ts
 
 snippet shinyapp
 	library(shiny)
-	
+
 	ui <- fluidPage(
-	  ${0}
+		${0}
 	)
-	
+
 	server <- function(input, output, session) {
-	  
+
 	}
-	
+
 	shinyApp(ui, server)
 
 snippet shinymod
 	${1:name}_UI <- function(id) {
-	  ns <- NS(id)
-	  tagList(
+		ns <- NS(id)
+		tagList(
 		${0}
-	  )
+		)
 	}
-	
+
 	${1:name} <- function(input, output, session) {
-	  
+
 	}
 
 
@@ -126,21 +126,21 @@ snippet source.folder
 				 X = list.files("src",
 												pattern = ".R$",
 												full.names = T))
-	
+
 snippet start
 	# Author: Julien Diot juliendiot@ut-biomet.org
 	# `r format(Sys.time(), "%Y")` The University of Tokyo
 	#
 	# Description:
 	# ${1:Description}
-	
+
 	#### PACKAGES ####
 	library(plotly)
-	
+
 	#### OPTIONS ####
 	options(stringsAsFactors = FALSE)
-	
-	
+
+
 	#### CODE ####
 
 snippet plot
@@ -150,13 +150,13 @@ snippet plot
 					data = ${1:dta},
 					x = ~${2:x},
 					y = ~${3:y},
-					# color = ~ , 
+					# color = ~ ,
 					hoverinfo = 'text',
 					text = apply(${1:dta}, 1, function(l) {
 						paste(names(l), ":", l, collapse = "\n")
 					})
 	)
-	
+
 snippet hist
 	`r suppressPackageStartupMessages(library("plotly")); "#hist"`
 	plot_ly(x = ${1:dta},
@@ -174,7 +174,7 @@ snippet hist
 			xaxis = list(title = "${2:x}"),
 			yaxis = list(title = "Count", # "percent" | "probability"
 										zeroline = TRUE)
-	  )
+	\t)
 
 snippet micro
 	microbenchmark::microbenchmark(
@@ -184,53 +184,53 @@ snippet micro
 
 snippet myColor
 	myColors <- list(
-	  red = "#CC0015",
-	  green = "#27CC1D",
-	  blue = "#003ECC",
-	  yellow = "#CCB600",
-	  orange = "#CC6300",
-	  purple = "#CA01CC",
-	  
-	  red_ = c("#CC0015", "#B30012", "#8C000E", "#6B000B", "#420007"),
-	  green_ = c("#27CC1D", "#21B319", "#1A8C14", "#146B0F", "#0C4209"),
-	  blue_ = c("#003ECC", "#0036B3", "#002A8C", "#00206B", "#001442"),
-	  yellow_ = c("#CCB600", "#B3A100", "#8C7E00", "#6B6000", "#423C00"),
-	  orange_ = c("#CC6300", "#B35600", "#8C4400", "#6B3400", "#422000"),
-	  purple_ = c("#CA01CC", "#B000B3", "#8A008C", "#69006B", "#410042"),
-	  
-	  pal1 = c("#CC0015", "#27CC1D", "#003ECC", "#CCB600", "#CC6300", "#CA01CC"),
-	  batlow = c("#001959", "#184E60", "#577646", "#B28C32", "#FCA68C", "#F9CCF9"),
-	  mononoke = c("#AA202C", "#453F2C", "#1E1234", "#F2F3E3", "#DCB995", "#309F4F"),
-	  chiiro = c("#13121A", "#A23C4A", "#E76160", "#493630", "#E7B68D", "#E2E6C3"),
-	  ponyo = c("#007CB0", "#00547F", "#81B9D8", "#DD7768", "#E95867", "#F7CCAC"),
-	  majo = c("#18459C", "#FBF3DB", "#D9DE77", "#303461", "#FBAF74", "#EC414D"),
-	  hauru = c("#0086C6", "#566586", "#813C4E", "#BCBC26", "#EDC097", "#F0BD49"),
-	  totoro = c("#47678A", "#646A69", "#D1CFA8", "#D15579", "#DB8727", "#E4E476"),
-	  amelie = c("#FDC24D", "#C52B24", "#EDE4DA", "#032430", "#009C4E", "#013821")
-	  # see also pkg "scico"
-	  # to check palette: 
-	  # library(scales)
-	  # show_col(c("#CC0015", "#27CC1D", "#003ECC", "#CCB600", "#CC6300", "#CA01CC"))
+		red = "#CC0015",
+		green = "#27CC1D",
+		blue = "#003ECC",
+		yellow = "#CCB600",
+		orange = "#CC6300",
+		purple = "#CA01CC",
+
+		red_ = c("#CC0015", "#B30012", "#8C000E", "#6B000B", "#420007"),
+		green_ = c("#27CC1D", "#21B319", "#1A8C14", "#146B0F", "#0C4209"),
+		blue_ = c("#003ECC", "#0036B3", "#002A8C", "#00206B", "#001442"),
+		yellow_ = c("#CCB600", "#B3A100", "#8C7E00", "#6B6000", "#423C00"),
+		orange_ = c("#CC6300", "#B35600", "#8C4400", "#6B3400", "#422000"),
+		purple_ = c("#CA01CC", "#B000B3", "#8A008C", "#69006B", "#410042"),
+
+		pal1 = c("#CC0015", "#27CC1D", "#003ECC", "#CCB600", "#CC6300", "#CA01CC"),
+		batlow = c("#001959", "#184E60", "#577646", "#B28C32", "#FCA68C", "#F9CCF9"),
+		mononoke = c("#AA202C", "#453F2C", "#1E1234", "#F2F3E3", "#DCB995", "#309F4F"),
+		chiiro = c("#13121A", "#A23C4A", "#E76160", "#493630", "#E7B68D", "#E2E6C3"),
+		ponyo = c("#007CB0", "#00547F", "#81B9D8", "#DD7768", "#E95867", "#F7CCAC"),
+		majo = c("#18459C", "#FBF3DB", "#D9DE77", "#303461", "#FBAF74", "#EC414D"),
+		hauru = c("#0086C6", "#566586", "#813C4E", "#BCBC26", "#EDC097", "#F0BD49"),
+		totoro = c("#47678A", "#646A69", "#D1CFA8", "#D15579", "#DB8727", "#E4E476"),
+		amelie = c("#FDC24D", "#C52B24", "#EDE4DA", "#032430", "#009C4E", "#013821")
+		# see also pkg "scico"
+		# to check palette:
+		# library(scales)
+		# show_col(c("#CC0015", "#27CC1D", "#003ECC", "#CCB600", "#CC6300", "#CA01CC"))
 	)
-	
+
 snippet testAPI
 	# Test ${1:METHODE} /${2:path} ----
 	test_that("${1:METHODE} /${2:path}", {
-		  
+
 		# creat path and request
 		path <- paste0(host,"/${2:path}")
 		query <- list(
 			${3:key} = ${4:value}
 			)
-		
-		
+
+
 		# send request
 		resp <- ${1:METHODE}(path,
 								query = query)
-		
+
 		# test status
 		expect_equal(resp\$status_code, 200)
-		
+
 		# test response content
 		respContent <- content(resp)
 		expect_equal(respContent\$KEY, VALUE)
@@ -240,12 +240,12 @@ snippet verbalExpr
 	library(RVerbalExpressions)
 	# construct an expression
 	# https://rverbalexpressions.netlify.app/reference/index.html
-	x <- rx_start_of_line() %>% 
-		rx_find('http') %>% 
-		rx_maybe('s') %>% 
-		rx_find('://') %>% 
-		rx_maybe('www.') %>% 
-		rx_anything_but(' ') %>% 
+	x <- rx_start_of_line() %>%
+		rx_find('http') %>%
+		rx_maybe('s') %>%
+		rx_find('://') %>%
+		rx_maybe('www.') %>%
+		rx_anything_but(' ') %>%
 		rx_end_of_line()
 	# print the expression
 	x
@@ -263,13 +263,13 @@ snippet R6
 		"${1:object}",
 		lock_objects = FALSE,
 		public = list(
-		  # Public Fields ####
+			# Public Fields ####
 			#' @field ${2:field1} [] ${2:field1} description
 			${2:field1} = NULL,
 			#' @field ${3:field2} [] ${3:field2} description
 			${3:field2} = NULL,
-	
-	    # Public Methods ####
+
+			# Public Methods ####
 			#' @description Create a new ${1:object} object.
 			#' @param ${2:field1} [] ${2:field1} description
 			#' @param ${3:field2} [] ${3:field2} description
@@ -300,17 +300,17 @@ snippet R6
 			}
 		),
 		active = list(
-		  # Active Fields ####
+			# Active Fields ####
 			#' @field ${5:activeField1} [] description of ${5:activeField1}
 			${5:activeField1} = function(){
 				x
 			}
 		),
 		private = list(
-		  # Private Fields ####
+			# Private Fields ####
 			#' @field ${6:privateField} [] ${6:privateField} description
 			${6:privateField} = NULL,
-			
+
 			# Private Methods ####
 			# @description description of ${7:privateMethod}
 			# @param x [] description of x
@@ -320,6 +320,53 @@ snippet R6
 			}
 		)
 	)
+
+
+snippet sendSlack
+	#' Send message to slack
+	#'
+	#' @param body body of the message
+	#' @param channel destination channel of the message
+	#' @param file attached file
+	#'
+	sendSlack <- function(body,
+	                      channel = NULL,
+	                      file = NULL) {
+	
+	  tryCatch({
+	
+	    # setup slack connexion (need a "~/.slackr" file)
+	    slackr::slackr_setup()
+	
+	    if (is.null(channel)) {
+	      channel <- Sys.getenv("SLACK_CHANNEL")
+	    }
+	
+	    slackr::slackr_msg(body, channel = channel)
+	
+	    if (!is.null(file)) {
+	      slackr::slackr_upload(filename = file,
+	                            channels = channel)
+	    }
+	    return(0)
+	
+	  }, error = function(err) {
+	    # Error part, evaluated in case of error:
+	    message("Error detected. Here's the original error message:")
+	    message(err)
+	    # Choose a return value in case of error
+	    return(1)
+	
+	  }, warning = function(warn) {
+	    # Warning part, evaluated in case of warning:
+	    message("Warning detected. Here's the original warning message:")
+	    message(warn)
+	    # Choose a return value in case of warning
+	    return(2)
+	
+	  })
+	}
+
 
 snippet sendMail
 	#' Send an email using the linux command "mail" and postfix
@@ -336,35 +383,35 @@ snippet sendMail
 	#'
 	#' @examples
 	sendMail <- function(to,
-	                     subject,
-	                     body,
-	                     from = paste0(Sys.info()["user"], "-R@", Sys.info()["nodename"]),
-	                     file = NULL) {
-	
-	    # check if system can send mails
-	    x <- system("hash mail", intern = TRUE)
-	    if ( ! is.null(attributes(x))) {
-	        stop("Command 'mail' not found. Please install 'postfix' and 'mailutils'.")
-	    }
-	
-	    # attached files
-	    if (! is.null(file)) {
-	        stopifnot("file not found" = all(file.exists(file)))
-	        if (sum(file.size(file)) > 10^7 ) {
-	            warning("Attached files bigger than 10 Mo ! May not work...")
-	        }
-	        fileCmd <- paste0(" --content-filename=\"", basename(file),"\" --attach=\"", file, "\"", collapse = " ")
-	    } else {
-	        fileCmd <- ""
-	    }
-	
-	    command <- paste0("echo \"", body, "\" | mail ",
-	                      "-s \"", subject, "\" ",
-	                      "-aFrom:", from,
-	                      " ", paste(to, collapse = " "),
-	                      fileCmd)
-	    cat(command)
-	    system(command)
+							 subject,
+											 body,
+											 from = paste0(Sys.info()["user"], "-R@", Sys.info()["nodename"]),
+											 file = NULL) {
+
+			# check if system can send mails
+			x <- system("hash mail", intern = TRUE)
+			if ( ! is.null(attributes(x))) {
+					stop("Command 'mail' not found. Please install 'postfix' and 'mailutils'.")
+			}
+
+			# attached files
+			if (! is.null(file)) {
+					stopifnot("file not found" = all(file.exists(file)))
+					if (sum(file.size(file)) > 10^7 ) {
+							warning("Attached files bigger than 10 Mo ! May not work...")
+					}
+					fileCmd <- paste0(" --content-filename=\"", basename(file),"\" --attach=\"", file, "\"", collapse = " ")
+			} else {
+					fileCmd <- ""
+			}
+
+			command <- paste0("echo \"", body, "\" | mail ",
+												"-s \"", subject, "\" ",
+												"-aFrom:", from,
+												" ", paste(to, collapse = " "),
+												fileCmd)
+			cat(command)
+			system(command)
 	}
 	sendMail(to, subject, body, file = file)
 
@@ -392,35 +439,35 @@ snippet tryCatch
 		# This is the 'try' part
 		# write here the code to try
 		${1:expression}
-		
-		# No need to state the return value via `return()` as code 
+
+		# No need to state the return value via `return()` as code
 		# in the "try" part is not wrapped insided a function (unlike that
 		# for the condition handlers for warnings and error below)
-		
+
 	}, error = function(err) {
 		# Error part, evaluated in case of error:
 		message("Error detected. Here's the original error message:")
 		message(err)
 		# Choose a return value in case of error
 		return(1)
-		
+
 	}, warning = function(warn) {
 		# Warning part, evaluated in case of warning:
 		message("Warning detected. Here's the original warning message:")
 		message(warn)
 		# Choose a return value in case of warning
 		return(2)
-		
+
 	}, finally = {
 		# NOTE:
 		# Here goes everything that should be executed at the end,
 		# regardless of success or error.
 		message("\nSome other message at the end")
-	
+
 	})
 
 # Shiny related
-snippet box 
+snippet box
 	shinydashboard::box(
 					width = ${1:width},
 					title = ${2:title},

@@ -93,9 +93,11 @@ pkgList <- c(
   "profvis",
   "beepr",
   "renv",
-  "RVerbalExpressions"
+  "RVerbalExpressions",
+  "prompt",
+  "ropenblas"
 )
-
+install.packages(pkgList)
 sapply(pkgList, installPackages)
 
 devtools::install_github("timflutre/rutilstimflutre")
