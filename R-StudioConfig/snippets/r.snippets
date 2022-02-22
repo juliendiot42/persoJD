@@ -332,38 +332,38 @@ snippet sendSlack
 	sendSlack <- function(body,
 	                      channel = NULL,
 	                      file = NULL) {
-	
+
 	  tryCatch({
-	
+
 	    # setup slack connexion (need a "~/.slackr" file)
 	    slackr::slackr_setup()
-	
+
 	    if (is.null(channel)) {
 	      channel <- Sys.getenv("SLACK_CHANNEL")
 	    }
-	
+
 	    slackr::slackr_msg(body, channel = channel)
-	
+
 	    if (!is.null(file)) {
 	      slackr::slackr_upload(filename = file,
 	                            channels = channel)
 	    }
 	    return(0)
-	
+
 	  }, error = function(err) {
 	    # Error part, evaluated in case of error:
 	    message("Error detected. Here's the original error message:")
 	    message(err)
 	    # Choose a return value in case of error
 	    return(1)
-	
+
 	  }, warning = function(warn) {
 	    # Warning part, evaluated in case of warning:
 	    message("Warning detected. Here's the original warning message:")
 	    message(warn)
 	    # Choose a return value in case of warning
 	    return(2)
-	
+
 	  })
 	}
 
@@ -434,6 +434,10 @@ snippet funViz
 snippet emptyList
 	vector(mode = "list", length = ${1:length})
 
+snippet regmatch
+	regmatches(${1:x}, regexpr("${2:pattern}", ${1:x}))
+
+
 snippet tryCatch
 	tryCatch({
 		# This is the 'try' part
@@ -465,6 +469,52 @@ snippet tryCatch
 		message("\nSome other message at the end")
 
 	})
+
+
+snippet suppressThisWarning
+	# this is based on `base::suppressWarnings`
+	withCallingHandlers({
+	 ${1:expr}
+	}, warning = function(warn) {
+	  catchedWarn <- "${2:warnMessage}"
+	  if (identical(warn\$message, catchedWarn)) {
+	    tryInvokeRestart("muffleWarning")
+	  }
+	})
+
+snippet linReg
+	# Simple linear reggression
+
+	mod <- lm(${1:y} ~ ${2:x}, data = ${3:data})
+	summary(mod)
+
+	## plot
+	## plot
+	plot_ly(type = "scatter",
+	        mode = "markers",
+	        data = phenos,
+	        x = ~ ${2:x},
+	        y = ~ ${1:y},
+	        # color = ~ ,
+	        hoverinfo = 'text',
+	        text = apply(phenos, 1, function(l) {
+	          paste(names(l), ":", l, collapse = "\n")
+	        })
+	) %>% add_lines(inherit = FALSE,
+	                x = ~${2:x},
+	                y = fitted(mod),
+	                name = paste("reggression line, r2:", round(summary(mod)\$r.squared, 2))
+	) %>% layout(
+	  title = paste("${1:y} =",
+	                round(mod\$coefficients[1], 2), "+",
+	                round(mod\$coefficients[2], 2), "${2:x}")
+	)
+
+
+	## residual check
+	par(mfrow=c(2,2))
+	plot(mod)
+
 
 # Shiny related
 snippet box
