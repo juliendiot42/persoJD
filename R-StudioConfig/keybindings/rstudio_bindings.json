@@ -1,7 +1,6 @@
 {
     "pasteLastYank": "",
     "yankBeforeCursor": "Ctrl+U",
-    "newSourceDoc": "Ctrl+N",
     "executeToCurrentLine": "Ctrl+Shift+Enter",
     "sourceActiveDocumentWithEcho": "Ctrl+Alt+B",
     "closeSourceDoc": "",
@@ -11,5 +10,9 @@
     "restartR": "F10",
     "zoomIn": "",
     "zoomOut": "",
-    "insertAssignmentOperator": "Alt+-"
+    "closeAllSourceDocs": "",
+    "closeOtherSourceDocs": "",
+    "goToFileFunction": "Ctrl+.",
+    "switchFocusSourceConsole": "Ctrl+Shift+W",
+    "layoutZoomConsole": ""
 }

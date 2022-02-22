@@ -7,19 +7,19 @@
             "TabSet2"
         ],
         "tabSet1": [
-            "History",
-            "Connections",
-            "Build",
-            "VCS",
-            "Tutorial",
             "Presentation"
         ],
         "tabSet2": [
             "Environment",
+            "History",
             "Files",
             "Plots",
+            "Connections",
             "Packages",
             "Help",
+            "Build",
+            "VCS",
+            "Tutorial",
             "Viewer"
         ],
         "hiddenTabSet": [],
@@ -81,15 +81,12 @@
     "graphics_backend": "cairo",
     "auto_save_on_blur": true,
     "syntax_color_console": true,
-    "document_author": "JD",
+    "document_author": "Julien Diot",
     "editor_theme": "rscodeio",
-    "python_type": "system",
-    "python_version": "3.8.6",
-    "python_path": "/usr/bin/python3.8",
-    "source_with_echo": true,
     "editor_keybindings": "vim",
     "pdf_previewer": "none",
     "show_function_signature_tooltips": false,
-    "new_proj_git_init": true,
-    "terminal_path": "/usr/bin/terminator"
+    "terminal_path": "/usr/bin/terminator",
+    "source_with_echo": true,
+    "show_panel_focus_rectangle": true
 }
