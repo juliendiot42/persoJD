@@ -282,20 +282,20 @@ for (i in seq(plts)) {
 ```{r results='asis'}
 shiny::HTML('&nbsp;
 <!-- Add icon/font library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<script src="https://kit.fontawesome.com/8c6968c72f.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 
 <div class="footer" style="font-family: Lato">
     <hr />
     <p style="text-align: center;"><a href="https://github.com/juliendiot42">Julien Diot</a></p>
-    <p style="text-align: center;"><span style="color: #808080;"><em>juliendiot@ut-biomet.org</em></span></p>
+    <p style="text-align: center;"><span style="color: #808080;"><em>julien.d@listenfield.com</em></span></p>
 
 <!-- Add font awesome icons -->
     <p style="text-align: center;">
-        <a href="https://github.com/juliendiot42" class="fab fa-github"></a>
-        <a href="https://www.linkedin.com/in/julien-diot-949592107/" class="fab fa-linkedin"></a>
-        <a href="https://orcid.org/0000-0002-8738-2034" class="fab fa-orcid"></a>
-        <a href="https://keybase.io/juliendiot" class="fab fa-keybase"></a>
+        <a href="https://github.com/juliendiot42" class="fab fa-github"></a>&nbsp;
+        <a href="https://www.linkedin.com/in/julien-diot-949592107/" class="fab fa-linkedin"></a>&nbsp;
+        <a href="https://orcid.org/0000-0002-8738-2034" class="fa-brands fa-orcid"></a>&nbsp;
+        <a href="https://keybase.io/juliendiot" class="fa-brands fa-keybase"></a>
     </p>
 </div>
 &nbsp;')

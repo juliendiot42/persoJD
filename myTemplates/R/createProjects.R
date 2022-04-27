@@ -12,34 +12,13 @@ createStatProject <- function(path, ...) {
   # collect inputs
   params <- list(...)
 
-  # create "data" dir
-  if (params[["data"]]) {
-    directory <- paste0(path, "/data")
-    dir.create(directory, recursive = TRUE, showWarnings = FALSE)
-  }
-
-  # create "output" dir
-  if (params[["output"]]) {
-    directory <- paste0(path, "/output")
-    dir.create(directory, recursive = TRUE, showWarnings = FALSE)
-  }
-
-  # create "src" dir
-  if (params[["src"]]) {
-    directory <- paste0(path, "/src")
-    dir.create(directory, recursive = TRUE, showWarnings = FALSE)
-  }
-
-  # create "test" dir
-  if (params[["data"]]) {
-    directory <- paste0(path, "/test")
-    dir.create(directory, recursive = TRUE, showWarnings = FALSE)
-  }
-
-  # create "tmp" dir
-  if (params[["data"]]) {
-    directory <- paste0(path, "/tmp")
-    dir.create(directory, recursive = TRUE, showWarnings = FALSE)
+  # create new folders
+  newFolders <- c('data', 'output', 'src', 'test', 'tmp')
+  for (folder in newFolders) {
+    if (params[[folder]]) {
+      directory <- paste0(path, "/", folder)
+      dir.create(directory, recursive = TRUE, showWarnings = FALSE)
+    }
   }
 
   # create analysis.R file
