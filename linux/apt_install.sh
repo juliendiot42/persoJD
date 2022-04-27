@@ -2,6 +2,7 @@ sudo apt update && sudo apt upgrade -y
 
 sudo apt install -y \
 	vim \
+    vim-gtk \
 	curl \
 	make cmake \
 	git \
@@ -40,7 +41,10 @@ sudo apt install -y \
 	ibus-mozc mozc-server mozc-utils-gui \
 	discord \
 	fonts-firacode \
-	gphoto2 v4l2loopback-utils v4l2loopback-dkms ffmpeg 
+	gphoto2 v4l2loopback-utils v4l2loopback-dkms ffmpeg \
+	virtualbox virtualbox-guest-x11 \
+    screenkey \
+    sqlitebrowser
 	
 sudo apt install ttf-mscorefonts-installer -y
 
