@@ -492,12 +492,12 @@ snippet linReg
 	## plot
 	plot_ly(type = "scatter",
 	        mode = "markers",
-	        data = phenos,
+	        data = ${3:data},
 	        x = ~ ${2:x},
 	        y = ~ ${1:y},
 	        # color = ~ ,
 	        hoverinfo = 'text',
-	        text = apply(phenos, 1, function(l) {
+	        text = apply(${3:data}, 1, function(l) {
 	          paste(names(l), ":", l, collapse = "\n")
 	        })
 	) %>% add_lines(inherit = FALSE,

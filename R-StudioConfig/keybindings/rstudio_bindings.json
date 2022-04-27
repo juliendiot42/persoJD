@@ -14,5 +14,7 @@
     "closeOtherSourceDocs": "",
     "goToFileFunction": "Ctrl+.",
     "switchFocusSourceConsole": "Ctrl+Shift+W",
-    "layoutZoomConsole": ""
+    "layoutZoomConsole": "",
+    "focusSourceColumnSeparator": "",
+    "focusNextPane": "F6"
 }
