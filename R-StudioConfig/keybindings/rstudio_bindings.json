@@ -4,7 +4,7 @@
     "executeToCurrentLine": "Ctrl+Shift+Enter",
     "sourceActiveDocumentWithEcho": "Ctrl+Alt+B",
     "closeSourceDoc": "",
-    "nextTab": "Ctrl+W",
+    "nextTab": "Ctrl+Tab",
     "quitSession": "",
     "debugStep": "",
     "restartR": "F10",
@@ -16,5 +16,7 @@
     "switchFocusSourceConsole": "Ctrl+Shift+W",
     "layoutZoomConsole": "",
     "focusSourceColumnSeparator": "",
-    "focusNextPane": "F6"
+    "focusNextPane": "F6",
+    "previousTab": "Ctrl+Shift+Tab",
+    "insertRoxygenSkeleton": "Ctrl+Alt+Shift+R"
 }
