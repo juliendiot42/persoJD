@@ -20,7 +20,8 @@
             "Build",
             "VCS",
             "Tutorial",
-            "Viewer"
+            "Viewer",
+            "Presentations"
         ],
         "hiddenTabSet": [],
         "console_left_on_top": false,
@@ -28,7 +29,6 @@
         "additional_source_columns": 1
     },
     "show_invisibles": true,
-    "show_indent_guides": true,
     "continue_comments_on_newline": true,
     "tab_multiline_completion": true,
     "show_help_tooltip_on_idle": true,
@@ -41,7 +41,7 @@
     "highlight_r_function_calls": true,
     "font_size_points": 11,
     "default_encoding": "UTF-8",
-    "default_project_location": "~/Desktop",
+    "default_project_location": "~/Documents/Work/GitRepos",
     "show_doc_outline_rmd": true,
     "show_rmd_render_command": true,
     "console_double_click_select": true,
@@ -63,7 +63,7 @@
     "insert_numbered_latex_sections": true,
     "default_sweave_engine": "knitr",
     "posix_terminal_shell": "zsh",
-    "rmd_preferred_template_path": "/home/julien/R/x86_64-pc-linux-gnu-library/4.1/JD.Templates/rmarkdown/templates/JD_htmlReport",
+    "rmd_preferred_template_path": "/home/julien/R/renvExt/JD.Templates/rmarkdown/templates/JD_htmlReport",
     "jobs_tab_visibility": "shown",
     "soft_wrap_r_files": true,
     "highlight_selected_line": true,
@@ -87,6 +87,5 @@
     "pdf_previewer": "none",
     "show_function_signature_tooltips": false,
     "terminal_path": "/usr/bin/terminator",
-    "source_with_echo": true,
     "show_panel_focus_rectangle": true
 }

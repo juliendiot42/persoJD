@@ -1,9 +1,9 @@
 {
     "pasteLastYank": "",
-    "yankBeforeCursor": "Ctrl+U",
+    "yankBeforeCursor": "",
     "executeToCurrentLine": "Ctrl+Shift+Enter",
     "sourceActiveDocumentWithEcho": "Ctrl+Alt+B",
-    "closeSourceDoc": "",
+    "closeSourceDoc": "Ctrl+W Q",
     "nextTab": "Ctrl+Tab",
     "quitSession": "",
     "debugStep": "",

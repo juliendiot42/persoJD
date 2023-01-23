@@ -2,7 +2,7 @@ sudo apt update && sudo apt upgrade -y
 
 sudo apt install -y \
 	vim \
-    vim-gtk \
+        vim-gtk \
 	curl \
 	make cmake \
 	git \
@@ -28,8 +28,7 @@ sudo apt install -y \
 	thunderbird \
 	gnome-tweaks \
 	gnome-shell-extensions \
-	gnime-clocks \
-	piper \
+	gnome-clocks \
 	easystroke \
 	python3-pip \
 	gimp \
@@ -43,8 +42,9 @@ sudo apt install -y \
 	fonts-firacode \
 	gphoto2 v4l2loopback-utils v4l2loopback-dkms ffmpeg \
 	virtualbox virtualbox-guest-x11 \
-    screenkey \
-    sqlitebrowser
+    	screenkey \
+   	sqlitebrowser \
+   	easystrokes
 	
 sudo apt install ttf-mscorefonts-installer -y
 

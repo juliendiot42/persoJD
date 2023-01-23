@@ -151,7 +151,7 @@ snippet plot
 					x = ~${2:x},
 					y = ~${3:y},
 					# color = ~ ,
-					hoverinfo = 'text',
+					hoverinfo = "text",
 					text = apply(${1:dta}, 1, function(l) {
 						paste(names(l), ":", l, collapse = "\n")
 					})
@@ -174,7 +174,7 @@ snippet hist
 			xaxis = list(title = "${2:x}"),
 			yaxis = list(title = "Count", # "percent" | "probability"
 										zeroline = TRUE)
-	\t)
+	)
 
 snippet micro
 	microbenchmark::microbenchmark(
